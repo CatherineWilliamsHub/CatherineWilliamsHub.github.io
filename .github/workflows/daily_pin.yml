@@ -1,0 +1,28 @@
+name: USA Pinterest Auto Poster
+
+on:
+  schedule:
+    # প্রতিদিন বাংলাদেশ সময় সকাল ৬:০০টা এবং সকাল ৯:০০টায় (USA সন্ধ্যা ও রাত) চলবে
+    - cron: '0 0,3 * * *'
+  workflow_dispatch: # ১ ক্লিকে নিজে টেস্ট করার বাটন
+
+jobs:
+  post-pins:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install required library
+        run: pip install requests
+
+      - name: Run Auto Pin Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+        run: python auto_pin.py
