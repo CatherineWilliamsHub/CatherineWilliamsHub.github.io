@@ -1,4 +1,5 @@
 import os
+import re
 import time
 import json
 import uuid
@@ -8,7 +9,7 @@ from email.utils import formatdate
 from xml.sax.saxutils import escape
 import requests
 
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+GEMINI_API_KEY = (os.environ.get("GEMINI_API_KEY") or "").strip()
 SITE_URL = "https://catherinewilliamshub.github.io"
 
 BOARDS_CONFIG = {
@@ -16,6 +17,7 @@ BOARDS_CONFIG = {
         "board_name": "Trending Nails & Aesthetic Manicure",
         "xml_file": "nails.xml",
         "instruction": "Include the nail shape (Almond, Coffin, Short Square), color palette, and salon request tips.",
+        "hashtags": "#TrendingNails #NailArtIdeas #AcrylicNails #ManicureInspo #AestheticNails",
         "topics": [
             "Classy French Tip Acrylic Nails with a Modern Twist",
             "Minimalist Neutral Gel Manicure for Short Nails",
@@ -29,6 +31,7 @@ BOARDS_CONFIG = {
         "board_name": "Must-Have Pet Products & Care",
         "xml_file": "pets.xml",
         "instruction": "Include 3 practical pet care tips or reasons why US dog and cat owners love this setup.",
+        "hashtags": "#PetProducts #DogMomLife #CatLovers #PetCareTips #CozyPetHome",
         "topics": [
             "Cozy Orthopedic Dog Bed Setup in Aesthetic Living Room",
             "Modern Wooden Cat Tree Tower for Small Apartments",
@@ -42,6 +45,7 @@ BOARDS_CONFIG = {
         "board_name": "Health and Beauty Routines",
         "xml_file": "beauty.xml",
         "instruction": "Include a clear step-by-step routine order (Step 1, Step 2, Step 3) or practical self-care tips.",
+        "hashtags": "#SkincareRoutine #GlowingSkin #BeautyTips #SelfCareRoutine #CleanBeauty",
         "topics": [
             "Morning Skincare Routine for Glowing Glass Skin",
             "Nighttime Anti-Aging Skincare Layering Order",
@@ -55,6 +59,7 @@ BOARDS_CONFIG = {
         "board_name": "Healthy Diet & Weight Loss Meals",
         "xml_file": "diet.xml",
         "instruction": "Include estimated Calories & Protein macros, plus ingredients and quick prep steps.",
+        "hashtags": "#HighProteinMeals #HealthyMealPrep #WeightLossRecipes #LowCalorieMeals #CleanEating",
         "topics": [
             "High Protein Chicken and Avocado Meal Prep Bowls",
             "Flat Belly Green Smoothie with Spinach Chia and Berries",
@@ -78,8 +83,33 @@ def save_history(history):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
 
-def generate_pin_content(board_name, topic, extra_instruction):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+def get_available_gemini_models():
+    """আপনার API Key-তে কোন কোন Gemini মডেল চালু আছে তা নিজে থেকে খুঁজে বের করা"""
+    models = []
+    if not GEMINI_API_KEY:
+        return models
+    try:
+        r = requests.get(
+            f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}",
+            timeout=15
+        )
+        if r.status_code == 200:
+            for m in r.json().get("models", []):
+                methods = m.get("supportedGenerationMethods", [])
+                if "generateContent" in methods:
+                    name = m["name"].replace("models/", "")
+                    if "gemini" in name and "vision" not in name:
+                        models.append(name)
+    except Exception as e:
+        print(f"Model list check skipped: {e}")
+
+    default_models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"]
+    for dm in default_models:
+        if dm not in models:
+            models.append(dm)
+    return models
+
+def generate_pin_content(board_name, topic, extra_instruction, hashtags):
     prompt = f"""
     You are a US Pinterest SEO expert creating a viral Pin for the board "{board_name}".
     Topic: "{topic}"
@@ -93,14 +123,31 @@ def generate_pin_content(board_name, topic, extra_instruction):
       "image_prompt": "Ultra-realistic professional vertical lifestyle photography of {topic}, bright natural lighting, Pinterest aesthetic, magazine quality, 8k, no text on image"
     }}
     """
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"responseMimeType": "application/json"}
+    models_to_try = get_available_gemini_models()
+
+    for model_name in models_to_try:
+        try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
+            payload = {"contents": [{"parts": [{"text": prompt}]}]}
+            response = requests.post(url, json=payload, timeout=30)
+            if response.status_code == 200:
+                text_data = response.json()["candidates"][0]["content"]["parts"][0]["text"]
+                match = re.search(r"\{.*\}", text_data, re.DOTALL)
+                if match:
+                    data = json.loads(match.group(0))
+                    if "title" in data and "description" in data and "image_prompt" in data:
+                        print(f"✅ Generated text using model: {model_name}")
+                        return data
+        except Exception as e:
+            print(f"Trying next model after {model_name}: {e}")
+
+    # যদি কোনো কারণে API সাময়িকভাবে ব্যস্ত থাকে, তবে ব্যাকআপ SEO টেমপ্লেট কাজ করবে
+    print("ℹ️ Using built-in US SEO template fallback.")
+    return {
+        "title": f"{topic} | Must-Try Inspiration",
+        "description": f"Looking for the best {topic.lower()}? Save this pin for your next inspiration! {extra_instruction} {hashtags}",
+        "image_prompt": f"Ultra-realistic professional vertical lifestyle photography of {topic}, bright natural lighting, Pinterest aesthetic, magazine quality, high resolution, no text on image"
     }
-    response = requests.post(url, json=payload, timeout=30)
-    response.raise_for_status()
-    text_data = response.json()["candidates"][0]["content"]["parts"][0]["text"]
-    return json.loads(text_data)
 
 def download_image(image_prompt, filename):
     os.makedirs("images", exist_ok=True)
@@ -163,7 +210,7 @@ if __name__ == "__main__":
         topic = random.choice(cfg["topics"])
         print(f"Generating Pin for: {cfg['board_name']} | Topic: {topic}")
 
-        content = generate_pin_content(cfg["board_name"], topic, cfg["instruction"])
+        content = generate_pin_content(cfg["board_name"], topic, cfg["instruction"], cfg["hashtags"])
         pin_id = str(uuid.uuid4())[:8]
         img_filename = f"{key}_{pin_id}.jpg"
 
@@ -183,6 +230,6 @@ if __name__ == "__main__":
         history[key] = history[key][:20]
         build_rss_xml(cfg["board_name"], cfg["xml_file"], history[key])
         print(f"Updated {cfg['xml_file']} successfully!\n")
-        time.sleep(8)
+        time.sleep(6)
 
     save_history(history)
