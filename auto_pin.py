@@ -16,8 +16,14 @@ BOARDS_CONFIG = {
     "nails": {
         "board_name": "Trending Nails & Aesthetic Manicure",
         "xml_file": "nails.xml",
+        "search_query": "manicure nail art aesthetic nails",
         "instruction": "Include the nail shape (Almond, Coffin, Short Square), color palette, and salon request tips.",
         "hashtags": "#TrendingNails #NailArtIdeas #AcrylicNails #ManicureInspo #AestheticNails",
+        "fallback_images": [
+            "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1000&h=1500&fit=crop",
+            "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1000&h=1500&fit=crop",
+            "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=1000&h=1500&fit=crop"
+        ],
         "topics": [
             "Classy French Tip Acrylic Nails with a Modern Twist",
             "Minimalist Neutral Gel Manicure for Short Nails",
@@ -30,8 +36,14 @@ BOARDS_CONFIG = {
     "pets": {
         "board_name": "Must-Have Pet Products & Care",
         "xml_file": "pets.xml",
+        "search_query": "cute dog puppy cat indoor pet cozy",
         "instruction": "Include 3 practical pet care tips or reasons why US dog and cat owners love this setup.",
         "hashtags": "#PetProducts #DogMomLife #CatLovers #PetCareTips #CozyPetHome",
+        "fallback_images": [
+            "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1000&h=1500&fit=crop",
+            "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1000&h=1500&fit=crop",
+            "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=1000&h=1500&fit=crop"
+        ],
         "topics": [
             "Cozy Orthopedic Dog Bed Setup in Aesthetic Living Room",
             "Modern Wooden Cat Tree Tower for Small Apartments",
@@ -44,8 +56,14 @@ BOARDS_CONFIG = {
     "beauty": {
         "board_name": "Health and Beauty Routines",
         "xml_file": "beauty.xml",
+        "search_query": "skincare serum beauty routine aesthetic spa",
         "instruction": "Include a clear step-by-step routine order (Step 1, Step 2, Step 3) or practical self-care tips.",
         "hashtags": "#SkincareRoutine #GlowingSkin #BeautyTips #SelfCareRoutine #CleanBeauty",
+        "fallback_images": [
+            "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1000&h=1500&fit=crop",
+            "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&h=1500&fit=crop",
+            "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=1000&h=1500&fit=crop"
+        ],
         "topics": [
             "Morning Skincare Routine for Glowing Glass Skin",
             "Nighttime Anti-Aging Skincare Layering Order",
@@ -58,8 +76,14 @@ BOARDS_CONFIG = {
     "diet": {
         "board_name": "Healthy Diet & Weight Loss Meals",
         "xml_file": "diet.xml",
+        "search_query": "healthy salad bowl smoothie meal prep food",
         "instruction": "Include estimated Calories & Protein macros, plus ingredients and quick prep steps.",
         "hashtags": "#HighProteinMeals #HealthyMealPrep #WeightLossRecipes #LowCalorieMeals #CleanEating",
+        "fallback_images": [
+            "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1000&h=1500&fit=crop",
+            "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&h=1500&fit=crop",
+            "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1000&h=1500&fit=crop"
+        ],
         "topics": [
             "High Protein Chicken and Avocado Meal Prep Bowls",
             "Flat Belly Green Smoothie with Spinach Chia and Berries",
@@ -83,32 +107,6 @@ def save_history(history):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
 
-def get_available_gemini_models():
-    """আপনার API Key-তে কোন কোন Gemini মডেল চালু আছে তা নিজে থেকে খুঁজে বের করা"""
-    models = []
-    if not GEMINI_API_KEY:
-        return models
-    try:
-        r = requests.get(
-            f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}",
-            timeout=15
-        )
-        if r.status_code == 200:
-            for m in r.json().get("models", []):
-                methods = m.get("supportedGenerationMethods", [])
-                if "generateContent" in methods:
-                    name = m["name"].replace("models/", "")
-                    if "gemini" in name and "vision" not in name:
-                        models.append(name)
-    except Exception as e:
-        print(f"Model list check skipped: {e}")
-
-    default_models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"]
-    for dm in default_models:
-        if dm not in models:
-            models.append(dm)
-    return models
-
 def generate_pin_content(board_name, topic, extra_instruction, hashtags):
     prompt = f"""
     You are a US Pinterest SEO expert creating a viral Pin for the board "{board_name}".
@@ -120,16 +118,22 @@ def generate_pin_content(board_name, topic, extra_instruction, hashtags):
     {{
       "title": "Catchy US Pinterest SEO title under 90 characters",
       "description": "Value-packed SEO description (250-400 characters) ending with 5 trending hashtags",
-      "image_prompt": "Ultra-realistic professional vertical lifestyle photography of {topic}, bright natural lighting, Pinterest aesthetic, magazine quality, 8k, no text on image"
+      "image_prompt": "Vertical lifestyle photo of {topic}, natural lighting, aesthetic"
     }}
     """
-    models_to_try = get_available_gemini_models()
+    # আপনার অ্যাকাউন্টে সবচেয়ে দ্রুত কাজ করা মডেলগুলো প্রথমে রাখা হয়েছে
+    models_to_try = [
+        "gemini-flash-lite-latest",
+        "gemini-2.0-flash-lite",
+        "gemini-2.0-flash",
+        "gemini-1.5-flash"
+    ]
 
     for model_name in models_to_try:
         try:
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
             payload = {"contents": [{"parts": [{"text": prompt}]}]}
-            response = requests.post(url, json=payload, timeout=30)
+            response = requests.post(url, json=payload, timeout=20)
             if response.status_code == 200:
                 text_data = response.json()["candidates"][0]["content"]["parts"][0]["text"]
                 match = re.search(r"\{.*\}", text_data, re.DOTALL)
@@ -139,35 +143,76 @@ def generate_pin_content(board_name, topic, extra_instruction, hashtags):
                         print(f"✅ Generated text using model: {model_name}")
                         return data
         except Exception as e:
-            print(f"Trying next model after {model_name}: {e}")
+            print(f"Skipping {model_name}: {e}")
 
-    # যদি কোনো কারণে API সাময়িকভাবে ব্যস্ত থাকে, তবে ব্যাকআপ SEO টেমপ্লেট কাজ করবে
     print("ℹ️ Using built-in US SEO template fallback.")
     return {
         "title": f"{topic} | Must-Try Inspiration",
         "description": f"Looking for the best {topic.lower()}? Save this pin for your next inspiration! {extra_instruction} {hashtags}",
-        "image_prompt": f"Ultra-realistic professional vertical lifestyle photography of {topic}, bright natural lighting, Pinterest aesthetic, magazine quality, high resolution, no text on image"
+        "image_prompt": f"Vertical lifestyle photo of {topic}, bright lighting"
     }
 
-def download_image(image_prompt, filename):
+def download_image(image_prompt, cfg, filename):
     os.makedirs("images", exist_ok=True)
     filepath = os.path.join("images", filename)
-    encoded_prompt = urllib.parse.quote(image_prompt)
-    headers = {"User-Agent": "Mozilla/5.0"}
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Referer": SITE_URL
+    }
 
-    for attempt in range(3):
-        try:
-            seed = random.randint(1000, 999999)
-            image_url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1000&height=1500&seed={seed}&nologo=true"
-            response = requests.get(image_url, headers=headers, timeout=90)
-            response.raise_for_status()
+    # ১ম চেষ্টা: Pollinations AI (সংক্ষিপ্ত প্রম্পট এবং nologo ছাড়া যাতে 402 না আসে)
+    short_prompt = urllib.parse.quote(image_prompt[:90])
+    seed = random.randint(1000, 999999)
+    pollinations_url = f"https://image.pollinations.ai/prompt/{short_prompt}?width=1000&height=1500&seed={seed}"
+    try:
+        r = requests.get(pollinations_url, headers=headers, timeout=45)
+        if r.status_code == 200 and len(r.content) > 5000:
             with open(filepath, "wb") as f:
-                f.write(response.content)
-            return f"{SITE_URL}/images/{filename}", len(response.content)
+                f.write(r.content)
+            print("🖼️ Image generated via Pollinations AI!")
+            return f"{SITE_URL}/images/{filename}", len(r.content)
+    except Exception as e:
+        print(f"Pollinations skipped: {e}")
+
+    # ২য় চেষ্টা: Openverse Free Stock Photography API
+    try:
+        q = urllib.parse.quote(cfg["search_query"])
+        ov_url = f"https://api.openverse.org/v1/images/?q={q}&page_size=20"
+        ov_res = requests.get(ov_url, headers=headers, timeout=20)
+        if ov_res.status_code == 200:
+            results = ov_res.json().get("results", [])
+            random.shuffle(results)
+            for item in results[:5]:
+                img_link = item.get("url")
+                if img_link:
+                    img_r = requests.get(img_link, headers=headers, timeout=25)
+                    if img_r.status_code == 200 and len(img_r.content) > 10000:
+                        with open(filepath, "wb") as f:
+                            f.write(img_r.content)
+                        print("🖼️ High-res lifestyle photo downloaded via Openverse!")
+                        return f"{SITE_URL}/images/{filename}", len(img_r.content)
+    except Exception as e:
+        print(f"Openverse skipped: {e}")
+
+    # ৩য় চেষ্টা: নিশ অনুযায়ী ভেরিফাইড Unsplash HD Vertical Photos
+    for fb_url in random.sample(cfg["fallback_images"], len(cfg["fallback_images"])):
+        try:
+            r = requests.get(f"{fb_url}&sig={seed}", headers=headers, timeout=25)
+            if r.status_code == 200 and len(r.content) > 5000:
+                with open(filepath, "wb") as f:
+                    f.write(r.content)
+                print("🖼️ High-res lifestyle photo downloaded via Unsplash!")
+                return f"{SITE_URL}/images/{filename}", len(r.content)
         except Exception as e:
-            print(f"Retry {attempt + 1} for image download: {e}")
-            time.sleep(5)
-    raise Exception("Failed to generate image.")
+            print(f"Unsplash fallback skipped: {e}")
+
+    # ৪র্থ গ্যারান্টিড ব্যাকআপ (যাতে কোড কখনোই ক্র্যাশ না করে)
+    r = requests.get(f"https://picsum.photos/seed/{seed}/1000/1500", headers=headers, timeout=25)
+    r.raise_for_status()
+    with open(filepath, "wb") as f:
+        f.write(r.content)
+    print("🖼️ Fallback vertical photo downloaded!")
+    return f"{SITE_URL}/images/{filename}", len(r.content)
 
 def build_rss_xml(board_title, xml_filename, items):
     rss_items = ""
@@ -214,7 +259,7 @@ if __name__ == "__main__":
         pin_id = str(uuid.uuid4())[:8]
         img_filename = f"{key}_{pin_id}.jpg"
 
-        img_url, img_size = download_image(content["image_prompt"], img_filename)
+        img_url, img_size = download_image(content["image_prompt"], cfg, img_filename)
 
         new_item = {
             "guid": f"{key}-{pin_id}",
@@ -230,6 +275,6 @@ if __name__ == "__main__":
         history[key] = history[key][:20]
         build_rss_xml(cfg["board_name"], cfg["xml_file"], history[key])
         print(f"Updated {cfg['xml_file']} successfully!\n")
-        time.sleep(6)
+        time.sleep(5)
 
     save_history(history)
