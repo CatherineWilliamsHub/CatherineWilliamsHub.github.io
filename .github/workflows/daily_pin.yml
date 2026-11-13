@@ -21,8 +21,8 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install requests
-        run: pip install requests
+      - name: Install required libraries
+        run: pip install requests Pillow
 
       - name: Generate AI Pins and Update RSS Feeds
         env:
@@ -33,6 +33,6 @@ jobs:
         run: |
           git config user.name "Catherine Auto Bot"
           git config user.email "bot@catherinewilliamshub.github.io"
-          git add .
-          git commit -m "Auto-update daily Pinterest RSS feeds" || exit 0
+          git add -A
+          git commit -m "Auto-update 5 boards HD Pinterest RSS feeds" || exit 0
           git push
