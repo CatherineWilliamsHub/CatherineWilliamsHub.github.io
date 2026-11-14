@@ -11,6 +11,22 @@ SITE_URL = "https://catherinewilliamshub.github.io"
 HISTORY_FILE = "pins_history_v6.json"
 
 BOARDS_CONFIG = {
+    "jewelry": {
+        "board_name": "Luxury Jewelry & Engagement Rings",
+        "xml_file": "jewelry.xml",
+        "instruction": "Include details about the metal (14k/18k Gold, Platinum), gemstone cut (Oval, Emerald, Pear), and styling tips.",
+        "hashtags": "#EngagementRings #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryInspo",
+        "style": "High-end close-up commercial luxury jewelry photography on aesthetic cream velvet and white marble, warm sunlit diamond sparkles, crystal-clear facets and polished 18k gold texture, 8k photorealistic, sharp focus, no text",
+        "topics": [
+            "brilliant oval cut solitaire diamond engagement ring with hidden halo on thin 18k yellow gold band in a cream velvet ring box",
+            "aesthetic layered dainty 14k gold necklaces with herringbone chain, diamond pendant, and gold hoop earrings on white silk",
+            "emerald cut diamond engagement ring stacked with a diamond eternity wedding band on a woman's graceful hand",
+            "luxury marble jewelry tray displaying a sparkling diamond tennis bracelet, gold chunky rings, and pearl drop earrings",
+            "pear-shaped diamond engagement ring with pave gold band sparkling in warm golden sunlight on beige linen",
+            "minimalist 18k gold cuff bracelets, vintage gold watch, and stackable diamond rings styled on a woman's wrist"
+        ],
+        "backup": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1080&h=1620&fit=crop&q=95"
+    },
     "nails": {
         "board_name": "Trending Nails",
         "xml_file": "nails.xml",
@@ -24,7 +40,8 @@ BOARDS_CONFIG = {
             "soft blush pink French tip almond nails with cute hand-painted red cherry micro art",
             "icy blue glitter ombre almond nails with clean silver chrome French tips",
             "warm tortoise-shell and burgundy red floral swirl almond gel nails with gold foil"
-        ]
+        ],
+        "backup": "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1080&h=1620&fit=crop&q=95"
     },
     "hairstyles": {
         "board_name": "Trending Hairstyles & Hair Color",
@@ -39,7 +56,8 @@ BOARDS_CONFIG = {
             "rich dimensional copper auburn long wavy hair with warm golden shine in natural light",
             "effortless chic French twist claw clip updo on dimensional bronde hair with loose tendrils",
             "silky vanilla cream blonde lob haircut with soft textured waves and shadow root"
-        ]
+        ],
+        "backup": "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1080&h=1620&fit=crop&q=95"
     },
     "homedecor": {
         "board_name": "Home Decor",
@@ -53,7 +71,8 @@ BOARDS_CONFIG = {
             "aesthetic small bedroom makeover with layered beige linen bedding, warm glowing fairy lights, and indoor olive tree",
             "luxury spa bathroom with freestanding soaking tub, warm backlit round mirror, and wooden bath tray with candles",
             "chic entryway console table styling with oversized round brass mirror, woven baskets, and pampas grass vase"
-        ]
+        ],
+        "backup": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1080&h=1620&fit=crop&q=95"
     },
     "patio": {
         "board_name": "Cozy Patio, Garden & Backyard Ideas",
@@ -68,22 +87,8 @@ BOARDS_CONFIG = {
             "modern backyard oasis with wooden deck, beige outdoor sectional sofa, fire bowl, and potted olive trees",
             "welcoming American front porch makeover with wooden rocking chairs, layered outdoor rugs, and blooming planters",
             "bohemian garden relaxation nook with macrame hanging chair, fairy lights, stone pathway, and blooming hydrangeas"
-        ]
-    },
-    "jewelry": {
-        "board_name": "Luxury Jewelry & Engagement Rings",
-        "xml_file": "jewelry.xml",
-        "instruction": "Include details about the metal (14k/18k Gold, Platinum), gemstone cut (Oval, Emerald, Pear), and styling tips.",
-        "hashtags": "#EngagementRings #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryInspo",
-        "style": "High-end close-up commercial luxury jewelry photography on aesthetic cream velvet and white marble, warm sunlit diamond sparkles, crystal-clear facets and polished 18k gold texture, 8k photorealistic, sharp focus, no text",
-        "topics": [
-            "brilliant oval cut solitaire diamond engagement ring with hidden halo on thin 18k yellow gold band in a cream velvet ring box",
-            "aesthetic layered dainty 14k gold necklaces with herringbone chain, diamond pendant, and gold hoop earrings on white silk",
-            "emerald cut diamond engagement ring stacked with a diamond eternity wedding band on a woman's graceful hand",
-            "luxury marble jewelry tray displaying a sparkling diamond tennis bracelet, gold chunky rings, and pearl drop earrings",
-            "pear-shaped diamond engagement ring with pavé gold band sparkling in warm golden sunlight on beige linen",
-            "minimalist 18k gold cuff bracelets, vintage gold watch, and stackable diamond rings styled on a woman's wrist"
-        ]
+        ],
+        "backup": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1080&h=1620&fit=crop&q=95"
     },
     "pets": {
         "board_name": "Must-Have Pet Products & Care",
@@ -97,7 +102,8 @@ BOARDS_CONFIG = {
             "elevated bamboo dog feeding station with two matte white ceramic bowls beside a cute French Bulldog puppy",
             "modern white ceramic pet water fountain and smart automatic feeder in a bright clean kitchen beside a cute tabby cat",
             "cute miniature Dachshund puppy wearing a luxury sage-green corduroy padded dog harness with brass hardware"
-        ]
+        ],
+        "backup": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1080&h=1620&fit=crop&q=95"
     },
     "beauty": {
         "board_name": "Health and Beauty Routines",
@@ -110,7 +116,8 @@ BOARDS_CONFIG = {
             "nighttime anti-aging skincare arrangement with amber glass retinol bottle, peptide cream jar, and silk sleep mask",
             "natural hair care flat-lay with glass rosemary oil dropper bottle, wooden bamboo paddle brush, and silk scrunchies",
             "everything shower spa routine essentials with whipped pink body scrub jar, body oil bottle, dry brush, and white towels"
-        ]
+        ],
+        "backup": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1080&h=1620&fit=crop&q=95"
     },
     "diet": {
         "board_name": "Healthy Diet & Weight Loss Meals",
@@ -123,7 +130,8 @@ BOARDS_CONFIG = {
             "thick creamy green smoothie in a clear glass jar topped with fresh raspberries, chia seeds, and sliced almonds",
             "pan-seared honey garlic salmon fillet with roasted asparagus spears and lemon wedges on a white ceramic plate",
             "three glass mason jars layered with high-protein vanilla overnight oats, chia pudding, and fresh blueberries and strawberries"
-        ]
+        ],
+        "backup": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1080&h=1620&fit=crop&q=95"
     }
 }
 
@@ -170,7 +178,7 @@ def save_pil_image(img, filepath, crop_bottom=0):
     img.save(filepath, format="JPEG", quality=95, optimize=True)
     return os.path.getsize(filepath)
 
-def generate_official_ai_image(image_prompt, filepath):
+def generate_official_ai_image(image_prompt, cfg, filepath):
     os.makedirs("images", exist_ok=True)
 
     flux_spaces = [
@@ -200,39 +208,32 @@ def generate_official_ai_image(image_prompt, filepath):
                 return sz
         except Exception as e:
             print(f"Space {space_name} note: {e}", flush=True)
+            time.sleep(5)
 
-    if HF_TOKEN:
-        try:
-            print("🎨 Trying HF Free SDXL 1.0 Router...", flush=True)
-            r = requests.post(
-                "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0",
-                headers={"Authorization": f"Bearer {HF_TOKEN}"},
-                json={"inputs": image_prompt},
-                timeout=60
-            )
-            if r.status_code == 200 and len(r.content) > 15000:
-                im = Image.open(io.BytesIO(r.content))
-                sz = save_pil_image(im, filepath)
-                print("🚀 Ultra-Crisp AI Image generated via HF SDXL 1.0!", flush=True)
-                return sz
-        except Exception as e:
-            print(f"HF SDXL note: {e}", flush=True)
+    # Pollinations FLUX Fallback
+    try:
+        clean_p = re.sub(r"[^a-zA-Z0-9, ]", "", image_prompt)[:220]
+        enc = urllib.parse.quote(clean_p)
+        seed = random.randint(10000, 999999)
+        r = requests.get(
+            f"https://image.pollinations.ai/prompt/{enc}?width=1024&height=1536&seed={seed}&model=flux&enhance=false",
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=60
+        )
+        if r.status_code == 200 and len(r.content) > 20000:
+            im = Image.open(io.BytesIO(r.content))
+            sz = save_pil_image(im, filepath, crop_bottom=65)
+            print("✨ AI Image generated via Flux Fallback!", flush=True)
+            return sz
+    except Exception as e:
+        print(f"Flux fallback note: {e}", flush=True)
 
-    clean_p = re.sub(r"[^a-zA-Z0-9, ]", "", image_prompt)[:220]
-    enc = urllib.parse.quote(clean_p)
-    seed = random.randint(10000, 999999)
-    r = requests.get(
-        f"https://image.pollinations.ai/prompt/{enc}?width=1024&height=1536&seed={seed}&model=flux&enhance=false",
-        headers={"User-Agent": "Mozilla/5.0"},
-        timeout=60
-    )
-    if r.status_code == 200 and len(r.content) > 20000:
-        im = Image.open(io.BytesIO(r.content))
-        sz = save_pil_image(im, filepath, crop_bottom=65)
-        print("✨ AI Image generated via Flux Fallback!", flush=True)
-        return sz
-
-    raise Exception("All AI image engines were temporarily busy.")
+    # Guaranteed High-Res Backup so XML creation NEVER fails
+    r = requests.get(cfg["backup"], headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
+    im = Image.open(io.BytesIO(r.content))
+    sz = save_pil_image(im, filepath)
+    print("📸 High-Res Studio Backup Image saved!", flush=True)
+    return sz
 
 def build_rss(board_title, xml_file, items):
     rss_items = ""
@@ -260,7 +261,15 @@ def build_rss(board_title, xml_file, items):
 
 if __name__ == "__main__":
     history = load_history()
-    for key, cfg in BOARDS_CONFIG.items():
+
+    # যে বোর্ডের XML ফাইল এখনো তৈরি হয়নি (যেমন jewelry.xml), সেটি সবার আগে ১ নম্বরে রান হবে
+    sorted_keys = sorted(
+        BOARDS_CONFIG.keys(),
+        key=lambda k: (os.path.exists(BOARDS_CONFIG[k]["xml_file"]), len(history.get(k, [])))
+    )
+
+    for key in sorted_keys:
+        cfg = BOARDS_CONFIG[key]
         try:
             topic = random.choice(cfg["topics"])
             print(f"\n📌 Board: {cfg['board_name']} | Topic: {topic}", flush=True)
@@ -269,7 +278,7 @@ if __name__ == "__main__":
             filename = f"{key}_{pin_id}.jpg"
             filepath = os.path.join("images", filename)
 
-            img_sz = generate_official_ai_image(content["image_prompt"], filepath)
+            img_sz = generate_official_ai_image(content["image_prompt"], cfg, filepath)
             img_url = f"{SITE_URL}/images/{filename}"
 
             history.setdefault(key, []).insert(0, {
@@ -283,7 +292,7 @@ if __name__ == "__main__":
             })
             build_rss(cfg["board_name"], cfg["xml_file"], history[key])
             print(f"✅ Updated {cfg['xml_file']} successfully!", flush=True)
-            time.sleep(10)
+            time.sleep(15)
         except Exception as e:
             print(f"⚠️ Skipped {key} temporarily: {e}", flush=True)
 
