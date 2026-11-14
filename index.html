@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Pinterest Domain Verification -->
     <meta name="p:domain_verify" content="baa6e2aa6a2678a302b421ba8c8a07ce"/>
-    <title>Catherine Williams Hub | US Lifestyle, Nails, Home Decor, Beauty & Wellness</title>
+    <title>Catherine Williams Hub | US Lifestyle, Nails, Hairstyles, Home Decor, Jewelry & Beauty</title>
     <style>
         :root {
             --primary: #d6336c;
@@ -50,7 +50,7 @@
             text-decoration: underline;
         }
 
-        /* Header & Menu (Scrolls normally, NEVER floats over images) */
+        /* Header & Menu (Normal scroll) */
         header {
             background: #ffffff;
             border-bottom: 1px solid var(--border);
@@ -74,7 +74,7 @@
             justify-content: center;
             gap: 8px;
             margin-top: 14px;
-            max-width: 800px;
+            max-width: 920px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -120,7 +120,6 @@
             margin-bottom: 6px;
         }
 
-        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 15px auto;
@@ -218,7 +217,6 @@
             border-radius: 8px;
         }
 
-        /* Bottom Ads Row */
         .bottom-ads-grid {
             display: flex;
             flex-wrap: wrap;
@@ -279,18 +277,21 @@
 
     <!-- Top Smartlink Promo Bar -->
     <div class="top-promo">
-        ✨ Trending US Lifestyle & Beauty Finds — Flash Deals Live!
+        ✨ Trending US Lifestyle, Beauty & Home Finds — Flash Deals Live!
         <a href="https://araplhn.org/4/d95e2db27e8129bb1b0060906b9423b2" target="_blank" rel="noopener">Explore Picks →</a>
     </div>
 
-    <!-- Header & Category Menu (Normal scroll, full width) -->
+    <!-- Header & 8-Category Menu -->
     <header>
         <div class="brand-title">Catherine Williams Hub</div>
-        <div class="brand-sub">Daily US Inspiration for Trending Nails, Home Decor, Pets, Beauty & Wellness</div>
+        <div class="brand-sub">Daily US Inspiration for Nails, Hairstyles, Home, Patio, Jewelry, Pets, Beauty & Wellness</div>
         <div class="nav-bar">
             <button class="nav-btn active" onclick="filterPins('all', this)">All Inspiration</button>
             <button class="nav-btn" onclick="filterPins('nails', this)">💅 Trending Nails</button>
+            <button class="nav-btn" onclick="filterPins('hairstyles', this)">💇‍♀️ Hairstyles</button>
             <button class="nav-btn" onclick="filterPins('homedecor', this)">🏡 Home Decor</button>
+            <button class="nav-btn" onclick="filterPins('patio', this)">🌿 Patio & Garden</button>
+            <button class="nav-btn" onclick="filterPins('jewelry', this)">💍 Luxury Jewelry</button>
             <button class="nav-btn" onclick="filterPins('pets', this)">🐾 Pet Products</button>
             <button class="nav-btn" onclick="filterPins('beauty', this)">✨ Health & Beauty</button>
             <button class="nav-btn" onclick="filterPins('diet', this)">🥗 Diet & Meals</button>
@@ -300,7 +301,7 @@
 
     <div class="container">
 
-        <!-- TOP AD SLOT: Loads 300x250 on Mobile (so screen never stretches) -->
+        <!-- TOP AD SLOT (300x250) -->
         <div class="ad-box">
             <span class="ad-label">Sponsored Offer</span>
             <script>
@@ -379,7 +380,7 @@
     </div>
 
     <footer>
-        <p><strong>Catherine Williams Hub</strong> &copy; 2026 | Curated US Lifestyle, Beauty, Home Decor & Pet Care Inspiration.</p>
+        <p><strong>Catherine Williams Hub</strong> &copy; 2026 | Curated US Lifestyle, Beauty, Home Decor & Jewelry Inspiration.</p>
         <p style="margin-top: 8px;">
             <a href="https://araplhn.org/4/d95e2db27e8129bb1b0060906b9423b2" target="_blank" rel="noopener" style="color: #d6336c; font-weight: 600;">Special Partner Offers</a> |
             <a href="https://www.pinterest.com/CatherineWilliamsHub/" target="_blank" rel="noopener">Follow on Pinterest</a>
@@ -393,14 +394,17 @@
 
         const CATEGORY_NAMES = {
             nails: "Trending Nails",
+            hairstyles: "Hairstyles & Color",
             homedecor: "Home Decor",
+            patio: "Patio & Backyard",
+            jewelry: "Luxury Jewelry",
             pets: "Pet Products",
             beauty: "Health & Beauty",
             diet: "Diet & Meals"
         };
 
         async function loadPins() {
-            const historyFiles = ["pins_history_v6.json", "pins_history_v5.json", "pins_history_v4.json", "pins_history_v3.json"];
+            const historyFiles = ["pins_history_v6.json", "pins_history_v5.json"];
             for (const file of historyFiles) {
                 try {
                     const res = await fetch(file + "?t=" + Date.now());
