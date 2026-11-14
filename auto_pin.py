@@ -1,15 +1,14 @@
-import os, re, io, glob, time, json, uuid, base64, random
+import os, re, io, glob, time, json, uuid, random, urllib.parse
 from email.utils import formatdate
 from xml.sax.saxutils import escape
 import requests
 from PIL import Image, ImageOps
-from huggingface_hub import InferenceClient
 from gradio_client import Client
 
 GEMINI_API_KEY = (os.environ.get("GEMINI_API_KEY") or "").strip()
 HF_TOKEN = (os.environ.get("HF_TOKEN") or "").strip()
 SITE_URL = "https://catherinewilliamshub.github.io"
-HISTORY_FILE = "pins_history_v5.json"
+HISTORY_FILE = "pins_history_v6.json"
 
 BOARDS_CONFIG = {
     "nails": {
@@ -17,7 +16,7 @@ BOARDS_CONFIG = {
         "xml_file": "nails.xml",
         "instruction": "Mention nail shape (Almond/Coffin), colors, and salon request tips.",
         "hashtags": "#TrendingNails #NailArtDesigns #AlmondNails #AcrylicNails #ManicureInspo",
-        "style": "Close-up beauty salon photograph of a woman's graceful hand showing all five manicured fingernails clearly, intricate nail art on every single nail, glossy gel topcoat, natural skin texture, bright studio lighting, sharp focus on nail design, 8k photorealistic, no text",
+        "style": "Close-up beauty salon photograph of a woman's graceful hand resting on a cream sweater, all five manicured fingernails clearly visible, intricate nail art on every single nail, glossy gel topcoat, bright studio lighting, sharp focus, 8k photorealistic, no text",
         "topics": [
             "glossy lavender and blue ombre almond nails with delicate 3D butterfly nail art and silver sparkles",
             "sheer milky pink almond nails with 3D white floral petals and thin gold chrome swirls",
@@ -122,8 +121,10 @@ def generate_pin_content(cfg, topic):
         "image_prompt": full_img_prompt
     }
 
-def save_pil_image(img, filepath):
+def save_pil_image(img, filepath, crop_bottom=0):
     img = img.convert("RGB")
+    if crop_bottom > 0 and img.height > 600:
+        img = img.crop((0, 0, img.width, img.height - crop_bottom))
     img = ImageOps.fit(img, (1000, 1500), Image.Resampling.LANCZOS)
     img.save(filepath, format="JPEG", quality=95, optimize=True)
     return os.path.getsize(filepath)
@@ -131,18 +132,23 @@ def save_pil_image(img, filepath):
 def generate_official_ai_image(image_prompt, filepath):
     os.makedirs("images", exist_ok=True)
 
-    # ১ম ইঞ্জিন: অফিশিয়াল Black Forest Labs FLUX.1-schnell Space (Gradio SDK - ১০০% ফ্রি ZeroGPU)
-    for space_name in ["black-forest-labs/FLUX.1-schnell", "multimodalart/FLUX.1-merged"]:
+    # ১ম ইঞ্জিন: অফিশিয়াল FLUX.1 Gradio Spaces (hf_token আর্গুমেন্ট ছাড়া, যাতে কোনো Error না আসে)
+    flux_spaces = [
+        "black-forest-labs/FLUX.1-schnell",
+        "multimodalart/FLUX.1-merged",
+        "black-forest-labs/FLUX.1-dev"
+    ]
+    for space_name in flux_spaces:
         try:
-            print(f"🎨 Generating 1024x1536 image via Official Space ({space_name})...", flush=True)
-            g_client = Client(space_name, hf_token=HF_TOKEN if HF_TOKEN else None, verbose=False)
+            print(f"🎨 Trying Official Space: {space_name}...", flush=True)
+            g_client = Client(space_name)
             result = g_client.predict(
-                prompt=image_prompt,
-                seed=0,
-                randomize_seed=True,
-                width=1024,
-                height=1536,
-                num_inference_steps=4,
+                image_prompt,
+                0,
+                True,
+                1024,
+                1536,
+                4,
                 api_name="/infer"
             )
             img_out = result[0] if isinstance(result, (list, tuple)) else result
@@ -155,40 +161,40 @@ def generate_official_ai_image(image_prompt, filepath):
         except Exception as e:
             print(f"Space {space_name} note: {e}", flush=True)
 
-    # ২য় ইঞ্জিন: অফিশিয়াল HuggingFace InferenceClient (FLUX.1-schnell)
+    # ২য় ইঞ্জিন: Hugging Face Free Router (SDXL Base 1.0 - যা hf-inference এ এখনো ১০০% ফ্রি)
     if HF_TOKEN:
         try:
-            print("🎨 Trying HuggingFace Official InferenceClient...", flush=True)
-            hf_client = InferenceClient(api_key=HF_TOKEN)
-            im = hf_client.text_to_image(
-                image_prompt,
-                model="black-forest-labs/FLUX.1-schnell"
-            )
-            sz = save_pil_image(im, filepath)
-            print("🚀 Ultra-Crisp AI Image generated via HF InferenceClient!", flush=True)
-            return sz
-        except Exception as e:
-            print(f"HF InferenceClient note: {e}", flush=True)
-
-        # ৩য় ইঞ্জিন: নতুন HuggingFace Router Endpoint
-        try:
+            print("🎨 Trying HF Free SDXL 1.0 Router...", flush=True)
             r = requests.post(
-                "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
+                "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0",
                 headers={"Authorization": f"Bearer {HF_TOKEN}"},
                 json={"inputs": image_prompt},
-                timeout=70
+                timeout=60
             )
             if r.status_code == 200 and len(r.content) > 15000:
                 im = Image.open(io.BytesIO(r.content))
                 sz = save_pil_image(im, filepath)
-                print("🚀 Ultra-Crisp AI Image generated via HF Router!", flush=True)
+                print("🚀 Ultra-Crisp AI Image generated via HF SDXL 1.0!", flush=True)
                 return sz
-            else:
-                print(f"HF Router status {r.status_code}: {r.text[:120]}", flush=True)
         except Exception as e:
-            print(f"HF Router note: {e}", flush=True)
+            print(f"HF SDXL note: {e}", flush=True)
 
-    raise Exception("All official FLUX.1 image generators were busy. Please re-run.")
+    # ৩য় ইঞ্জিন: Pollinations FLUX Model (enhance=false সহ শার্প ছবি)
+    clean_p = re.sub(r"[^a-zA-Z0-9, ]", "", image_prompt)[:220]
+    enc = urllib.parse.quote(clean_p)
+    seed = random.randint(10000, 999999)
+    r = requests.get(
+        f"https://image.pollinations.ai/prompt/{enc}?width=1024&height=1536&seed={seed}&model=flux&enhance=false",
+        headers={"User-Agent": "Mozilla/5.0"},
+        timeout=60
+    )
+    if r.status_code == 200 and len(r.content) > 20000:
+        im = Image.open(io.BytesIO(r.content))
+        sz = save_pil_image(im, filepath, crop_bottom=65)
+        print("✨ AI Image generated via Flux Fallback!", flush=True)
+        return sz
+
+    raise Exception("All AI image engines were temporarily busy.")
 
 def build_rss(board_title, xml_file, items):
     rss_items = ""
