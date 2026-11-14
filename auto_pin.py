@@ -1,4 +1,4 @@
-import os, re, io, glob, time, json, uuid, random, urllib.parse
+import os, re, io, time, json, uuid, random, urllib.parse
 from email.utils import formatdate
 from xml.sax.saxutils import escape
 import requests
@@ -26,6 +26,21 @@ BOARDS_CONFIG = {
             "warm tortoise-shell and burgundy red floral swirl almond gel nails with gold foil"
         ]
     },
+    "hairstyles": {
+        "board_name": "Trending Hairstyles & Hair Color",
+        "xml_file": "hairstyles.xml",
+        "instruction": "Mention the haircut/layering style, hair color technique (Balayage, Gloss, Highlights), and styling tips.",
+        "hashtags": "#TrendingHairstyles #HairColorIdeas #BalayageHair #HairInspo #SalonHair",
+        "style": "Back-angle luxury hair salon photography showing a woman's voluminous healthy hair clearly, silky glossy hair strands, natural studio lighting, ultra-sharp focus on hair texture and color blend, 8k photorealistic, no text",
+        "topics": [
+            "long layered caramel blonde balayage beach waves with bright face-framing highlights",
+            "glossy espresso brunette butterfly haircut with bouncy blowout curls and curtain bangs",
+            "romantic boho half-up fishtail braided hairstyle on honey blonde wavy hair with pearl pins",
+            "rich dimensional copper auburn long wavy hair with warm golden shine in natural light",
+            "effortless chic French twist claw clip updo on dimensional bronde hair with loose tendrils",
+            "silky vanilla cream blonde lob haircut with soft textured waves and shadow root"
+        ]
+    },
     "homedecor": {
         "board_name": "Home Decor",
         "xml_file": "homedecor.xml",
@@ -37,7 +52,37 @@ BOARDS_CONFIG = {
             "modern farmhouse kitchen with white quartz waterfall island, brass pendant lights, and woven wooden barstools",
             "aesthetic small bedroom makeover with layered beige linen bedding, warm glowing fairy lights, and indoor olive tree",
             "luxury spa bathroom with freestanding soaking tub, warm backlit round mirror, and wooden bath tray with candles",
-            "cozy apartment balcony patio at dusk with warm string lights, rattan egg chair, and potted Mediterranean plants"
+            "chic entryway console table styling with oversized round brass mirror, woven baskets, and pampas grass vase"
+        ]
+    },
+    "patio": {
+        "board_name": "Cozy Patio, Garden & Backyard Ideas",
+        "xml_file": "patio.xml",
+        "instruction": "Include 3 outdoor styling tips (lighting, seating, plants) to create this cozy American backyard or patio.",
+        "hashtags": "#PatioDecor #BackyardIdeas #OutdoorLiving #CozyGarden #PorchDecor",
+        "style": "Architectural Digest outdoor living and American backyard photography at golden hour dusk, warm glowing Edison string lights, cozy natural wood and rattan furniture, lush green plants, 8k photorealistic, sharp focus, no text",
+        "topics": [
+            "cozy backyard stone fire pit seating area with cushioned wooden chairs, warm Edison string lights, and landscaping",
+            "covered wooden pergola patio with outdoor dining table, woven pendant lamps, and trailing ivy plants",
+            "aesthetic small apartment balcony patio at dusk with rattan egg chair, cream throw pillows, and glowing lanterns",
+            "modern backyard oasis with wooden deck, beige outdoor sectional sofa, fire bowl, and potted olive trees",
+            "welcoming American front porch makeover with wooden rocking chairs, layered outdoor rugs, and blooming planters",
+            "bohemian garden relaxation nook with macrame hanging chair, fairy lights, stone pathway, and blooming hydrangeas"
+        ]
+    },
+    "jewelry": {
+        "board_name": "Luxury Jewelry & Engagement Rings",
+        "xml_file": "jewelry.xml",
+        "instruction": "Include details about the metal (14k/18k Gold, Platinum), gemstone cut (Oval, Emerald, Pear), and styling tips.",
+        "hashtags": "#EngagementRings #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryInspo",
+        "style": "High-end close-up commercial luxury jewelry photography on aesthetic cream velvet and white marble, warm sunlit diamond sparkles, crystal-clear facets and polished 18k gold texture, 8k photorealistic, sharp focus, no text",
+        "topics": [
+            "brilliant oval cut solitaire diamond engagement ring with hidden halo on thin 18k yellow gold band in a cream velvet ring box",
+            "aesthetic layered dainty 14k gold necklaces with herringbone chain, diamond pendant, and gold hoop earrings on white silk",
+            "emerald cut diamond engagement ring stacked with a diamond eternity wedding band on a woman's graceful hand",
+            "luxury marble jewelry tray displaying a sparkling diamond tennis bracelet, gold chunky rings, and pearl drop earrings",
+            "pear-shaped diamond engagement ring with pavé gold band sparkling in warm golden sunlight on beige linen",
+            "minimalist 18k gold cuff bracelets, vintage gold watch, and stackable diamond rings styled on a woman's wrist"
         ]
     },
     "pets": {
@@ -83,16 +128,12 @@ BOARDS_CONFIG = {
 }
 
 def load_history():
-    if not os.path.exists(HISTORY_FILE):
-        for old_f in glob.glob("pins_history*.json"):
-            try: os.remove(old_f)
-            except Exception: pass
-        for old_img in glob.glob("images/*.jpg"):
-            try: os.remove(old_img)
-            except Exception: pass
     if os.path.exists(HISTORY_FILE):
         with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            for k in BOARDS_CONFIG:
+                data.setdefault(k, [])
+            return data
     return {k: [] for k in BOARDS_CONFIG}
 
 def generate_pin_content(cfg, topic):
@@ -195,7 +236,6 @@ def generate_official_ai_image(image_prompt, filepath):
 
 def build_rss(board_title, xml_file, items):
     rss_items = ""
-    # পিন্টারেস্ট RSS ফাইলে সর্বশেষ ২০টি পিন থাকবে যাতে ফাইল হালকা থাকে
     for it in items[:20]:
         rss_items += f"""
     <item>
@@ -221,30 +261,32 @@ def build_rss(board_title, xml_file, items):
 if __name__ == "__main__":
     history = load_history()
     for key, cfg in BOARDS_CONFIG.items():
-        topic = random.choice(cfg["topics"])
-        print(f"\n📌 Board: {cfg['board_name']} | Topic: {topic}", flush=True)
-        content = generate_pin_content(cfg, topic)
-        pin_id = str(uuid.uuid4())[:8]
-        filename = f"{key}_{pin_id}.jpg"
-        filepath = os.path.join("images", filename)
+        try:
+            topic = random.choice(cfg["topics"])
+            print(f"\n📌 Board: {cfg['board_name']} | Topic: {topic}", flush=True)
+            content = generate_pin_content(cfg, topic)
+            pin_id = str(uuid.uuid4())[:8]
+            filename = f"{key}_{pin_id}.jpg"
+            filepath = os.path.join("images", filename)
 
-        img_sz = generate_official_ai_image(content["image_prompt"], filepath)
-        img_url = f"{SITE_URL}/images/{filename}"
+            img_sz = generate_official_ai_image(content["image_prompt"], filepath)
+            img_url = f"{SITE_URL}/images/{filename}"
 
-        # নতুন পিন সবার ওপরে যুক্ত হবে এবং পুরনো সব পিন আজীবন থেকে যাবে
-        history.setdefault(key, []).insert(0, {
-            "guid": f"{key}-{pin_id}",
-            "title": content["title"],
-            "description": content["description"],
-            "link": f"{SITE_URL}/?pin={key}-{pin_id}",
-            "image_url": img_url,
-            "length": img_sz,
-            "pub_date": formatdate(localtime=False, usegmt=True)
-        })
-        build_rss(cfg["board_name"], cfg["xml_file"], history[key])
-        print(f"✅ Updated {cfg['xml_file']} successfully!", flush=True)
-        time.sleep(8)
+            history.setdefault(key, []).insert(0, {
+                "guid": f"{key}-{pin_id}",
+                "title": content["title"],
+                "description": content["description"],
+                "link": f"{SITE_URL}/?pin={key}-{pin_id}",
+                "image_url": img_url,
+                "length": img_sz,
+                "pub_date": formatdate(localtime=False, usegmt=True)
+            })
+            build_rss(cfg["board_name"], cfg["xml_file"], history[key])
+            print(f"✅ Updated {cfg['xml_file']} successfully!", flush=True)
+            time.sleep(10)
+        except Exception as e:
+            print(f"⚠️ Skipped {key} temporarily: {e}", flush=True)
 
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
-    print("\n🎉 All 5 boards updated and saved for lifetime history!", flush=True)
+    print("\n🎉 All 8 boards updated and saved for lifetime history!", flush=True)
