@@ -2,7 +2,6 @@ name: USA Pinterest Auto Poster
 
 on:
   schedule:
-    # প্রতিদিন বাংলাদেশ সময় সকাল ৬:০০টায় নতুন পিন তৈরি হবে
     - cron: '0 0 * * *'
   workflow_dispatch:
 
@@ -21,12 +20,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install required libraries
+      - name: Install libraries
         run: pip install requests Pillow
 
-      - name: Generate AI Pins and Update RSS Feeds
+      - name: Generate AI Pins and Update RSS
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python auto_pin.py
 
       - name: Save and Publish to Website
@@ -34,5 +34,5 @@ jobs:
           git config user.name "Catherine Auto Bot"
           git config user.email "bot@catherinewilliamshub.github.io"
           git add -A
-          git commit -m "Auto-update 5 boards HD Pinterest RSS feeds" || exit 0
+          git commit -m "Update 5 boards with Official FLUX.1 HD images" || exit 0
           git push
