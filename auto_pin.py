@@ -132,7 +132,6 @@ def save_pil_image(img, filepath, crop_bottom=0):
 def generate_official_ai_image(image_prompt, filepath):
     os.makedirs("images", exist_ok=True)
 
-    # ১ম ইঞ্জিন: অফিশিয়াল FLUX.1 Gradio Spaces (hf_token আর্গুমেন্ট ছাড়া, যাতে কোনো Error না আসে)
     flux_spaces = [
         "black-forest-labs/FLUX.1-schnell",
         "multimodalart/FLUX.1-merged",
@@ -161,7 +160,6 @@ def generate_official_ai_image(image_prompt, filepath):
         except Exception as e:
             print(f"Space {space_name} note: {e}", flush=True)
 
-    # ২য় ইঞ্জিন: Hugging Face Free Router (SDXL Base 1.0 - যা hf-inference এ এখনো ১০০% ফ্রি)
     if HF_TOKEN:
         try:
             print("🎨 Trying HF Free SDXL 1.0 Router...", flush=True)
@@ -179,7 +177,6 @@ def generate_official_ai_image(image_prompt, filepath):
         except Exception as e:
             print(f"HF SDXL note: {e}", flush=True)
 
-    # ৩য় ইঞ্জিন: Pollinations FLUX Model (enhance=false সহ শার্প ছবি)
     clean_p = re.sub(r"[^a-zA-Z0-9, ]", "", image_prompt)[:220]
     enc = urllib.parse.quote(clean_p)
     seed = random.randint(10000, 999999)
@@ -198,6 +195,7 @@ def generate_official_ai_image(image_prompt, filepath):
 
 def build_rss(board_title, xml_file, items):
     rss_items = ""
+    # পিন্টারেস্ট RSS ফাইলে সর্বশেষ ২০টি পিন থাকবে যাতে ফাইল হালকা থাকে
     for it in items[:20]:
         rss_items += f"""
     <item>
@@ -233,6 +231,7 @@ if __name__ == "__main__":
         img_sz = generate_official_ai_image(content["image_prompt"], filepath)
         img_url = f"{SITE_URL}/images/{filename}"
 
+        # নতুন পিন সবার ওপরে যুক্ত হবে এবং পুরনো সব পিন আজীবন থেকে যাবে
         history.setdefault(key, []).insert(0, {
             "guid": f"{key}-{pin_id}",
             "title": content["title"],
@@ -242,11 +241,10 @@ if __name__ == "__main__":
             "length": img_sz,
             "pub_date": formatdate(localtime=False, usegmt=True)
         })
-        history[key] = history[key][:20]
         build_rss(cfg["board_name"], cfg["xml_file"], history[key])
         print(f"✅ Updated {cfg['xml_file']} successfully!", flush=True)
         time.sleep(8)
 
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
-    print("\n🎉 All 5 boards updated with Official FLUX.1 HD images!", flush=True)
+    print("\n🎉 All 5 boards updated and saved for lifetime history!", flush=True)
