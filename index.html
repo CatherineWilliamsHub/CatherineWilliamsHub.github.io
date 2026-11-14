@@ -37,33 +37,30 @@
             background: linear-gradient(90deg, #d6336c, #e85d04);
             color: #fff;
             text-align: center;
-            padding: 8px 15px;
-            font-size: 14px;
+            padding: 10px 12px;
+            font-size: 13px;
             font-weight: 600;
         }
         .top-promo a {
-            text-decoration: underline;
-            margin-left: 8px;
-            background: rgba(255,255,255,0.2);
-            padding: 3px 10px;
+            display: inline-block;
+            margin-left: 6px;
+            background: rgba(255,255,255,0.25);
+            padding: 2px 10px;
             border-radius: 20px;
+            text-decoration: underline;
         }
 
-        /* Header & Navigation */
+        /* Header & Menu (Scrolls normally, NEVER floats over images) */
         header {
-            background: #fff;
+            background: #ffffff;
             border-bottom: 1px solid var(--border);
-            padding: 22px 15px;
+            padding: 20px 15px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 900;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         .brand-title {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
-            letter-spacing: 0.5px;
             color: var(--dark);
         }
         .brand-sub {
@@ -77,18 +74,20 @@
             justify-content: center;
             gap: 8px;
             margin-top: 14px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .nav-btn {
             background: var(--light-bg);
             border: 1px solid var(--border);
-            padding: 7px 15px;
+            padding: 8px 14px;
             border-radius: 25px;
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.2s;
         }
-        .nav-btn:hover, .nav-btn.active {
+        .nav-btn.active, .nav-btn:hover {
             background: var(--primary);
             color: #fff;
             border-color: var(--primary);
@@ -98,94 +97,61 @@
             color: #fff;
         }
 
-        /* Responsive Ad Containers */
+        /* Ad Containers */
         .ad-box {
+            margin: 15px auto;
+            padding: 10px;
+            background: #fff;
+            border: 1px dashed #e0d6ce;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 100%;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 15px auto;
-            max-width: 100%;
-            overflow: hidden;
-            background: #fff;
-            border: 1px dashed #e0d6ce;
-            border-radius: 10px;
-            padding: 8px;
         }
         .ad-label {
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #999;
-            margin-bottom: 4px;
-        }
-        /* Scale wide banners on smaller mobile screens so they never overflow */
-        .scale-728, .scale-468 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        @media (max-width: 760px) {
-            .scale-728 iframe {
-                transform: scale(0.44);
-                transform-origin: center center;
-            }
-            .scale-728 {
-                height: 50px;
-            }
-        }
-        @media (max-width: 500px) {
-            .scale-468 iframe {
-                transform: scale(0.68);
-                transform-origin: center center;
-            }
+            margin-bottom: 6px;
         }
 
-        /* Main 3-Column Magazine Layout */
-        .main-wrapper {
-            max-width: 1360px;
-            margin: 20px auto;
-            padding: 0 15px;
-            display: grid;
-            grid-template-columns: 180px 1fr 320px;
-            gap: 20px;
-            align-items: start;
-        }
-        .sidebar-left, .sidebar-right {
-            position: sticky;
-            top: 130px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 15px auto;
+            padding: 0 14px;
         }
 
-        /* Featured Pin Spotlight (When user clicks from Pinterest) */
+        /* Featured Pin Spotlight */
         #spotlight-section {
             display: none;
             background: #fff;
             border: 2px solid var(--primary);
             border-radius: 14px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 24px rgba(214,51,108,0.1);
+            padding: 16px;
+            margin-bottom: 20px;
         }
         .spotlight-grid {
             display: grid;
             grid-template-columns: 280px 1fr;
-            gap: 20px;
+            gap: 18px;
             align-items: center;
         }
         .spotlight-grid img {
             width: 100%;
             border-radius: 10px;
-            object-fit: cover;
+            display: block;
         }
 
         /* Pin Cards Grid */
         .pins-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
         .pin-card {
@@ -193,56 +159,51 @@
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid var(--border);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s;
         }
-        .pin-card:hover {
-            transform: translateY(-4px);
-        }
-        .pin-img-wrap {
+        .pin-img-link {
+            display: block;
             position: relative;
-            padding-top: 140%;
-            overflow: hidden;
+            width: 100%;
             background: #f3ece7;
         }
-        .pin-img-wrap img {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .pin-img-link img {
+            display: block;
             width: 100%;
-            height: 100%;
+            height: auto;
+            aspect-ratio: 2 / 3;
             object-fit: cover;
         }
         .pin-badge {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 12px;
+            left: 12px;
             background: rgba(0,0,0,0.75);
             color: #fff;
             font-size: 11px;
             font-weight: 700;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             text-transform: uppercase;
         }
         .pin-body {
-            padding: 15px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
         .pin-title {
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 700;
             margin-bottom: 8px;
             color: var(--dark);
         }
         .pin-desc {
-            font-size: 13px;
+            font-size: 13.5px;
             color: #555;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             flex-grow: 1;
         }
         .cta-btn {
@@ -253,25 +214,26 @@
             color: #fff;
             font-weight: 700;
             font-size: 14px;
-            padding: 11px 15px;
+            padding: 12px;
             border-radius: 8px;
-            transition: opacity 0.2s;
-        }
-        .cta-btn:hover {
-            opacity: 0.92;
-        }
-        .cta-btn-secondary {
-            margin-top: 8px;
-            background: #1f2421;
         }
 
-        /* Sticky Bottom Floating Ad Bar (320x50) */
+        /* Bottom Ads Row */
+        .bottom-ads-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        /* Sticky Bottom Bar (320x50) */
         .sticky-bottom-ad {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(255,255,255,0.97);
+            background: rgba(255,255,255,0.98);
             border-top: 1px solid var(--border);
             box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
             z-index: 999;
@@ -282,7 +244,7 @@
         }
         .close-sticky {
             position: absolute;
-            right: 12px;
+            right: 10px;
             top: 4px;
             font-size: 12px;
             background: #eee;
@@ -293,32 +255,19 @@
             cursor: pointer;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 1080px) {
-            .main-wrapper {
-                grid-template-columns: 1fr 310px;
-            }
-            .sidebar-left {
-                display: none;
-            }
-        }
         @media (max-width: 768px) {
-            .main-wrapper {
+            .spotlight-grid {
                 grid-template-columns: 1fr;
             }
-            .sidebar-left, .sidebar-right {
-                display: flex;
-                position: static;
-            }
-            .spotlight-grid {
+            .pins-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         footer {
             text-align: center;
-            padding: 35px 15px;
-            margin-top: 40px;
+            padding: 30px 15px;
+            margin-top: 35px;
             background: #fff;
             border-top: 1px solid var(--border);
             font-size: 13px;
@@ -330,11 +279,11 @@
 
     <!-- Top Smartlink Promo Bar -->
     <div class="top-promo">
-        ✨ Trending US Lifestyle & Beauty Finds — Flash Deals Live Now!
-        <a href="https://araplhn.org/4/d95e2db27e8129bb1b0060906b9423b2" target="_blank" rel="noopener">Explore Today's Picks →</a>
+        ✨ Trending US Lifestyle & Beauty Finds — Flash Deals Live!
+        <a href="https://araplhn.org/4/d95e2db27e8129bb1b0060906b9423b2" target="_blank" rel="noopener">Explore Picks →</a>
     </div>
 
-    <!-- Header & Category Filter -->
+    <!-- Header & Category Menu (Normal scroll, full width) -->
     <header>
         <div class="brand-title">Catherine Williams Hub</div>
         <div class="brand-sub">Daily US Inspiration for Trending Nails, Home Decor, Pets, Beauty & Wellness</div>
@@ -349,108 +298,41 @@
         </div>
     </header>
 
-    <!-- TOP LEADERBOARD BANNER (728x90) -->
-    <div class="ad-box">
-        <span class="ad-label">Sponsored Advertisement</span>
-        <div class="scale-728">
+    <div class="container">
+
+        <!-- TOP AD SLOT: Loads 300x250 on Mobile (so screen never stretches) -->
+        <div class="ad-box">
+            <span class="ad-label">Sponsored Offer</span>
             <script>
               atOptions = {
-                'key' : 'fcae1d46c0e1ec2a7d65f42092f796b9',
+                'key' : '0feac16ced4e60429bd2a1f51bb1631e',
                 'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
+                'height' : 250,
+                'width' : 300,
                 'params' : {}
               };
             </script>
-            <script src="https://bauval.org/22/fcae1d46c0e1ec2a7d65f42092f796b9"></script>
+            <script src="https://bauval.org/22/0feac16ced4e60429bd2a1f51bb1631e"></script>
         </div>
-    </div>
 
-    <!-- Main 3-Column Container -->
-    <div class="main-wrapper">
+        <!-- Featured Pin Spotlight -->
+        <div id="spotlight-section">
+            <div class="spotlight-grid" id="spotlight-content"></div>
+        </div>
 
-        <!-- LEFT SIDEBAR: 160x600 Skyscraper + Smartlink Promo -->
-        <aside class="sidebar-left">
-            <div class="ad-box">
-                <span class="ad-label">Sponsored</span>
-                <script>
-                  atOptions = {
-                    'key' : '7f4cee5d562fe285df8b3963ff21069c',
-                    'format' : 'iframe',
-                    'height' : 600,
-                    'width' : 160,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://bauval.org/22/7f4cee5d562fe285df8b3963ff21069c"></script>
-            </div>
-        </aside>
+        <!-- Dynamic Pinterest Cards Grid -->
+        <div class="pins-grid" id="pins-container"></div>
 
-        <!-- CENTER CONTENT -->
-        <main>
-            <!-- Featured Pin Spotlight (Shows automatically when visitor comes from a Pinterest Pin link) -->
-            <div id="spotlight-section">
-                <div class="spotlight-grid" id="spotlight-content"></div>
-            </div>
+        <!-- NATIVE BANNER AD -->
+        <div class="ad-box" style="margin-top: 25px;">
+            <span class="ad-label">Recommended For You</span>
+            <script async="async" data-cfasync="false" src="https://bauval.org/21/4cfec1fbeb99d43fe5c256beab235c47"></script>
+            <div id="container-4cfec1fbeb99d43fe5c256beab235c47" style="width: 100%;"></div>
+        </div>
 
-            <!-- Sub-Header Banner (468x60) -->
-            <div class="ad-box">
-                <span class="ad-label">Featured Partner</span>
-                <div class="scale-468">
-                    <script>
-                      atOptions = {
-                        'key' : 'a9c8ec89af4bb0b940b100a2c7d762ec',
-                        'format' : 'iframe',
-                        'height' : 60,
-                        'width' : 468,
-                        'params' : {}
-                      };
-                    </script>
-                    <script src="https://bauval.org/22/a9c8ec89af4bb0b940b100a2c7d762ec"></script>
-                </div>
-            </div>
-
-            <!-- Dynamic Pinterest Cards Grid -->
-            <div class="pins-grid" id="pins-container"></div>
-
-            <!-- NATIVE BANNER AD (In-Feed) -->
-            <div class="ad-box" style="margin-top: 25px;">
-                <span class="ad-label">Recommended For You</span>
-                <script async="async" data-cfasync="false" src="https://bauval.org/21/4cfec1fbeb99d43fe5c256beab235c47"></script>
-                <div id="container-4cfec1fbeb99d43fe5c256beab235c47" style="width: 100%;"></div>
-            </div>
-        </main>
-
-        <!-- RIGHT SIDEBAR: 300x250 + Smartlink Box + 160x300 -->
-        <aside class="sidebar-right">
-            <!-- 300x250 Medium Rectangle -->
-            <div class="ad-box">
-                <span class="ad-label">Trending Offer</span>
-                <script>
-                  atOptions = {
-                    'key' : '0feac16ced4e60429bd2a1f51bb1631e',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://bauval.org/22/0feac16ced4e60429bd2a1f51bb1631e"></script>
-            </div>
-
-            <!-- Smartlink High-CTR Card -->
-            <div class="pin-card" style="padding: 18px; text-align: center; background: #fff5f8;">
-                <h3 style="font-size: 18px; margin-bottom: 8px; color: #d6336c;">🎁 Editor's Top US Picks</h3>
-                <p style="font-size: 13px; color: #444; margin-bottom: 14px;">
-                    Unlock exclusive discounts on viral nail kits, cozy apartment decor, luxury pet beds & clean beauty routines!
-                </p>
-                <a class="cta-btn" href="https://araplhn.org/4/d95e2db27e8129bb1b0060906b9423b2" target="_blank" rel="noopener">
-                    Check Availability & Price →
-                </a>
-            </div>
-
-            <!-- 160x300 Banner -->
-            <div class="ad-box">
+        <!-- Extra Banners Row (160x300 & 160x600) -->
+        <div class="bottom-ads-grid">
+            <div class="ad-box" style="width: 180px;">
                 <span class="ad-label">Sponsored</span>
                 <script>
                   atOptions = {
@@ -463,11 +345,25 @@
                 </script>
                 <script src="https://bauval.org/22/4f53df96d4e6660fc4b065b87e69e85c"></script>
             </div>
-        </aside>
+
+            <div class="ad-box" style="width: 180px;">
+                <span class="ad-label">Partner</span>
+                <script>
+                  atOptions = {
+                    'key' : '7f4cee5d562fe285df8b3963ff21069c',
+                    'format' : 'iframe',
+                    'height' : 600,
+                    'width' : 160,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://bauval.org/22/7f4cee5d562fe285df8b3963ff21069c"></script>
+            </div>
+        </div>
 
     </div>
 
-    <!-- STICKY BOTTOM MOBILE/DESKTOP BAR (320x50 Banner) -->
+    <!-- STICKY BOTTOM BAR (320x50 Mobile Banner) -->
     <div class="sticky-bottom-ad" id="stickyAd">
         <button class="close-sticky" onclick="document.getElementById('stickyAd').style.display='none'">✕</button>
         <script>
@@ -534,21 +430,37 @@
                 return;
             }
 
-            container.innerHTML = list.map(pin => `
-                <article class="pin-card">
-                    <a href="${SMARTLINK}" target="_blank" rel="noopener" class="pin-img-wrap">
-                        <img src="${pin.image_url}" alt="${pin.title}" loading="lazy">
-                        <span class="pin-badge">${CATEGORY_NAMES[pin.category] || pin.category}</span>
-                    </a>
-                    <div class="pin-body">
-                        <h2 class="pin-title">${pin.title}</h2>
-                        <p class="pin-desc">${pin.description}</p>
-                        <a class="cta-btn" href="${SMARTLINK}" target="_blank" rel="noopener">
-                            ✨ View Full Guide & Products →
+            let html = "";
+            list.forEach((pin, idx) => {
+                html += `
+                    <article class="pin-card">
+                        <a href="${SMARTLINK}" target="_blank" rel="noopener" class="pin-img-link">
+                            <img src="${pin.image_url}" alt="${pin.title}" loading="lazy">
+                            <span class="pin-badge">${CATEGORY_NAMES[pin.category] || pin.category}</span>
                         </a>
-                    </div>
-                </article>
-            `).join("");
+                        <div class="pin-body">
+                            <h2 class="pin-title">${pin.title}</h2>
+                            <p class="pin-desc">${pin.description}</p>
+                            <a class="cta-btn" href="${SMARTLINK}" target="_blank" rel="noopener">
+                                ✨ View Full Guide & Products →
+                            </a>
+                        </div>
+                    </article>
+                `;
+                if ((idx + 1) % 2 === 0) {
+                    html += `
+                        <article class="pin-card" style="background: linear-gradient(145deg, #fff0f6, #ffffff); border: 2px dashed #d6336c; justify-content: center; text-align: center; padding: 22px;">
+                            <span style="font-size: 11px; text-transform: uppercase; color: #d6336c; font-weight: 800; letter-spacing: 1px;">🔥 Sponsored US Deal</span>
+                            <h3 style="font-size: 19px; margin: 10px 0; color: #1f2421;">Want This Exact Aesthetic Look?</h3>
+                            <p style="font-size: 13px; color: #555; margin-bottom: 16px;">Check out today's top-rated US Amazon & boutique finds curated by Catherine Williams Hub.</p>
+                            <a class="cta-btn" href="${SMARTLINK}" target="_blank" rel="noopener">
+                                🛍️ Shop Trending Deals Now →
+                            </a>
+                        </article>
+                    `;
+                }
+            });
+            container.innerHTML = html;
         }
 
         function filterPins(cat, btn) {
@@ -575,13 +487,10 @@
                         <span style="background:#d6336c; color:#fff; padding:4px 12px; border-radius:20px; font-size:12px; font-weight:700;">
                             📌 Featured Pinterest Pick
                         </span>
-                        <h1 style="font-size:22px; margin:12px 0 10px;">${found.title}</h1>
-                        <p style="font-size:14px; color:#444; margin-bottom:18px;">${found.description}</p>
+                        <h1 style="font-size:20px; margin:12px 0 10px;">${found.title}</h1>
+                        <p style="font-size:13px; color:#444; margin-bottom:16px;">${found.description}</p>
                         <a class="cta-btn" href="${SMARTLINK}" target="_blank" rel="noopener">
-                            🛍️ Shop This Look / Read Step-by-Step Guide →
-                        </a>
-                        <a class="cta-btn cta-btn-secondary" href="${SMARTLINK}" target="_blank" rel="noopener">
-                            📥 Download Free High-Res Checklist
+                            🛍️ Shop This Look / Read Full Guide →
                         </a>
                     </div>
                 `;
@@ -591,7 +500,7 @@
         loadPins();
     </script>
 
-    <!-- ADSTERRA SOCIAL BAR (High-Converting Floating Notification) -->
+    <!-- ADSTERRA SOCIAL BAR -->
     <script data-cfasync="false" src="https://bauval.org/14/c6b32e19f5dc4d86591f3abd9fcaead5"></script>
 
 </body>
