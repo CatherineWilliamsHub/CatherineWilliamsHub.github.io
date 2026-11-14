@@ -3,11 +3,13 @@ from email.utils import formatdate
 from xml.sax.saxutils import escape
 import requests
 from PIL import Image, ImageOps
+from huggingface_hub import InferenceClient
+from gradio_client import Client
 
 GEMINI_API_KEY = (os.environ.get("GEMINI_API_KEY") or "").strip()
 HF_TOKEN = (os.environ.get("HF_TOKEN") or "").strip()
 SITE_URL = "https://catherinewilliamshub.github.io"
-HISTORY_FILE = "pins_history_v4.json"
+HISTORY_FILE = "pins_history_v5.json"
 
 BOARDS_CONFIG = {
     "nails": {
@@ -15,7 +17,7 @@ BOARDS_CONFIG = {
         "xml_file": "nails.xml",
         "instruction": "Mention nail shape (Almond/Coffin), colors, and salon request tips.",
         "hashtags": "#TrendingNails #NailArtDesigns #AlmondNails #AcrylicNails #ManicureInspo",
-        "style": "Professional nail salon close-up photograph of a woman's graceful hand with five manicured fingers clearly visible, intricate nail art on every single nail, glossy gel topcoat, sharp focus, studio lighting, 8k photorealistic, no text",
+        "style": "Close-up beauty salon photograph of a woman's graceful hand showing all five manicured fingernails clearly, intricate nail art on every single nail, glossy gel topcoat, natural skin texture, bright studio lighting, sharp focus on nail design, 8k photorealistic, no text",
         "topics": [
             "glossy lavender and blue ombre almond nails with delicate 3D butterfly nail art and silver sparkles",
             "sheer milky pink almond nails with 3D white floral petals and thin gold chrome swirls",
@@ -82,11 +84,10 @@ BOARDS_CONFIG = {
 }
 
 def load_history():
-    # আগের সব খারাপ ছবি ডিলিট করে একদম ফ্রেশ শুরু করা
     if not os.path.exists(HISTORY_FILE):
-        for old_f in ["pins_history.json", "pins_history_v2.json", "pins_history_v3.json"]:
-            if os.path.exists(old_f):
-                os.remove(old_f)
+        for old_f in glob.glob("pins_history*.json"):
+            try: os.remove(old_f)
+            except Exception: pass
         for old_img in glob.glob("images/*.jpg"):
             try: os.remove(old_img)
             except Exception: pass
@@ -121,8 +122,8 @@ def generate_pin_content(cfg, topic):
         "image_prompt": full_img_prompt
     }
 
-def save_hd_jpeg(raw_bytes, filepath):
-    img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
+def save_pil_image(img, filepath):
+    img = img.convert("RGB")
     img = ImageOps.fit(img, (1000, 1500), Image.Resampling.LANCZOS)
     img.save(filepath, format="JPEG", quality=95, optimize=True)
     return os.path.getsize(filepath)
@@ -130,60 +131,64 @@ def save_hd_jpeg(raw_bytes, filepath):
 def generate_official_ai_image(image_prompt, filepath):
     os.makedirs("images", exist_ok=True)
 
-    # ১ম চেষ্টা: আপনার Google Gemini Pro API Key দিয়ে সরাসরি ছবি তৈরি
-    for m_name in ["gemini-2.0-flash-preview-image-generation", "gemini-2.0-flash-exp-image-generation"]:
+    # ১ম ইঞ্জিন: অফিশিয়াল Black Forest Labs FLUX.1-schnell Space (Gradio SDK - ১০০% ফ্রি ZeroGPU)
+    for space_name in ["black-forest-labs/FLUX.1-schnell", "multimodalart/FLUX.1-merged"]:
         try:
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{m_name}:generateContent?key={GEMINI_API_KEY}"
-            payload = {
-                "contents": [{"parts": [{"text": f"Generate a vertical 2:3 photorealistic image: {image_prompt}"}]}],
-                "generationConfig": {"responseModalities": ["TEXT", "IMAGE"]}
-            }
-            res = requests.post(url, json=payload, timeout=45)
-            if res.status_code == 200:
-                for part in res.json().get("candidates", [{}])[0].get("content", {}).get("parts", []):
-                    if "inlineData" in part:
-                        raw = base64.b64decode(part["inlineData"]["data"])
-                        if len(raw) > 15000:
-                            sz = save_hd_jpeg(raw, filepath)
-                            print(f"🌟 Ultra-HD Image generated via Google Gemini ({m_name})!", flush=True)
-                            return sz
-        except Exception:
-            pass
+            print(f"🎨 Generating 1024x1536 image via Official Space ({space_name})...", flush=True)
+            g_client = Client(space_name, hf_token=HF_TOKEN if HF_TOKEN else None, verbose=False)
+            result = g_client.predict(
+                prompt=image_prompt,
+                seed=0,
+                randomize_seed=True,
+                width=1024,
+                height=1536,
+                num_inference_steps=4,
+                api_name="/infer"
+            )
+            img_out = result[0] if isinstance(result, (list, tuple)) else result
+            img_path = img_out.get("path") if isinstance(img_out, dict) else img_out
+            if img_path and os.path.exists(img_path):
+                with Image.open(img_path) as im:
+                    sz = save_pil_image(im, filepath)
+                print(f"🚀 Ultra-Crisp AI Image generated via {space_name}!", flush=True)
+                return sz
+        except Exception as e:
+            print(f"Space {space_name} note: {e}", flush=True)
 
-    # ২য় চেষ্টা: অফিশিয়াল Hugging Face FLUX.1-schnell ইঞ্জিন (১০০% নিখুঁত ও ফ্রি)
+    # ২য় ইঞ্জিন: অফিশিয়াল HuggingFace InferenceClient (FLUX.1-schnell)
     if HF_TOKEN:
-        hf_headers = {
-            "Authorization": f"Bearer {HF_TOKEN}",
-            "Accept": "image/jpeg"
-        }
-        hf_endpoints = [
-            "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
-            "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell"
-        ]
-        payload = {
-            "inputs": image_prompt,
-            "parameters": {
-                "width": 1024,
-                "height": 1536,
-                "num_inference_steps": 4,
-                "seed": random.randint(1000, 999999)
-            }
-        }
-        for ep in hf_endpoints:
-            for attempt in range(2):
-                try:
-                    r = requests.post(ep, headers=hf_headers, json=payload, timeout=75)
-                    if r.status_code == 200 and len(r.content) > 20000:
-                        sz = save_hd_jpeg(r.content, filepath)
-                        print("🚀 Ultra-Crisp AI Image generated via Official Hugging Face FLUX.1!", flush=True)
-                        return sz
-                    elif r.status_code == 503:
-                        print("⏳ HF FLUX model warming up, waiting 15s...", flush=True)
-                        time.sleep(15)
-                except Exception as e:
-                    print(f"HF Endpoint retry: {e}", flush=True)
+        try:
+            print("🎨 Trying HuggingFace Official InferenceClient...", flush=True)
+            hf_client = InferenceClient(api_key=HF_TOKEN)
+            im = hf_client.text_to_image(
+                image_prompt,
+                model="black-forest-labs/FLUX.1-schnell"
+            )
+            sz = save_pil_image(im, filepath)
+            print("🚀 Ultra-Crisp AI Image generated via HF InferenceClient!", flush=True)
+            return sz
+        except Exception as e:
+            print(f"HF InferenceClient note: {e}", flush=True)
 
-    raise Exception("Could not generate image from Gemini or Hugging Face FLUX.1. Please check HF_TOKEN.")
+        # ৩য় ইঞ্জিন: নতুন HuggingFace Router Endpoint
+        try:
+            r = requests.post(
+                "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
+                headers={"Authorization": f"Bearer {HF_TOKEN}"},
+                json={"inputs": image_prompt},
+                timeout=70
+            )
+            if r.status_code == 200 and len(r.content) > 15000:
+                im = Image.open(io.BytesIO(r.content))
+                sz = save_pil_image(im, filepath)
+                print("🚀 Ultra-Crisp AI Image generated via HF Router!", flush=True)
+                return sz
+            else:
+                print(f"HF Router status {r.status_code}: {r.text[:120]}", flush=True)
+        except Exception as e:
+            print(f"HF Router note: {e}", flush=True)
+
+    raise Exception("All official FLUX.1 image generators were busy. Please re-run.")
 
 def build_rss(board_title, xml_file, items):
     rss_items = ""
@@ -238,4 +243,4 @@ if __name__ == "__main__":
 
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
-    print("\n🎉 All 5 boards updated with Official FLUX.1 / Gemini HD images!", flush=True)
+    print("\n🎉 All 5 boards updated with Official FLUX.1 HD images!", flush=True)
