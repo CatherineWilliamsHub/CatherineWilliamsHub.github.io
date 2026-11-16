@@ -1,4 +1,4 @@
-import os, re, io, time, json, uuid, random, urllib.parse
+import os, re, io, time, json, uuid, random, datetime, urllib.parse
 from email.utils import formatdate
 from xml.sax.saxutils import escape
 import requests
@@ -160,7 +160,6 @@ def generate_pin_content(cfg, topic):
                 if m:
                     data = json.loads(m.group(0))
                     data["image_prompt"] = full_img_prompt
-                    print(f"✅ Text generated via Gemini ({model})", flush=True)
                     return data
         except Exception:
             pass
@@ -170,70 +169,41 @@ def generate_pin_content(cfg, topic):
         "image_prompt": full_img_prompt
     }
 
-def save_pil_image(img, filepath, crop_bottom=0):
+def save_pil_image(img, filepath):
     img = img.convert("RGB")
-    if crop_bottom > 0 and img.height > 600:
-        img = img.crop((0, 0, img.width, img.height - crop_bottom))
     img = ImageOps.fit(img, (1000, 1500), Image.Resampling.LANCZOS)
     img.save(filepath, format="JPEG", quality=95, optimize=True)
     return os.path.getsize(filepath)
 
 def generate_official_ai_image(image_prompt, cfg, filepath):
     os.makedirs("images", exist_ok=True)
-
-    flux_spaces = [
-        "black-forest-labs/FLUX.1-schnell",
-        "multimodalart/FLUX.1-merged",
-        "black-forest-labs/FLUX.1-dev"
-    ]
+    flux_spaces = ["black-forest-labs/FLUX.1-schnell", "multimodalart/FLUX.1-merged"]
     for space_name in flux_spaces:
         try:
-            print(f"🎨 Trying Official Space: {space_name}...", flush=True)
             g_client = Client(space_name)
-            result = g_client.predict(
-                image_prompt,
-                0,
-                True,
-                1024,
-                1536,
-                4,
-                api_name="/infer"
-            )
+            result = g_client.predict(image_prompt, 0, True, 1024, 1536, 4, api_name="/infer")
             img_out = result[0] if isinstance(result, (list, tuple)) else result
             img_path = img_out.get("path") if isinstance(img_out, dict) else img_out
             if img_path and os.path.exists(img_path):
                 with Image.open(img_path) as im:
                     sz = save_pil_image(im, filepath)
-                print(f"🚀 Ultra-Crisp AI Image generated via {space_name}!", flush=True)
                 return sz
-        except Exception as e:
-            print(f"Space {space_name} note: {e}", flush=True)
-            time.sleep(5)
+        except Exception:
+            pass
 
-    # Pollinations FLUX Fallback
     try:
         clean_p = re.sub(r"[^a-zA-Z0-9, ]", "", image_prompt)[:220]
         enc = urllib.parse.quote(clean_p)
-        seed = random.randint(10000, 999999)
-        r = requests.get(
-            f"https://image.pollinations.ai/prompt/{enc}?width=1024&height=1536&seed={seed}&model=flux&enhance=false",
-            headers={"User-Agent": "Mozilla/5.0"},
-            timeout=60
-        )
+        r = requests.get(f"https://image.pollinations.ai/prompt/{enc}?width=1024&height=1536&model=flux&enhance=false", timeout=50)
         if r.status_code == 200 and len(r.content) > 20000:
             im = Image.open(io.BytesIO(r.content))
-            sz = save_pil_image(im, filepath, crop_bottom=65)
-            print("✨ AI Image generated via Flux Fallback!", flush=True)
-            return sz
-    except Exception as e:
-        print(f"Flux fallback note: {e}", flush=True)
+            return save_pil_image(im, filepath)
+    except Exception:
+        pass
 
-    # Guaranteed High-Res Backup so XML creation NEVER fails
-    r = requests.get(cfg["backup"], headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
+    r = requests.get(cfg["backup"], timeout=30)
     im = Image.open(io.BytesIO(r.content))
-    sz = save_pil_image(im, filepath)
-    print("📸 High-Res Studio Backup Image saved!", flush=True)
-    return sz
+    return save_pil_image(im, filepath)
 
 def build_rss(board_title, xml_file, items):
     rss_items = ""
@@ -261,14 +231,22 @@ def build_rss(board_title, xml_file, items):
 
 if __name__ == "__main__":
     history = load_history()
+    board_keys = list(BOARDS_CONFIG.keys())
 
-    # যে বোর্ডের XML ফাইল এখনো তৈরি হয়নি (যেমন jewelry.xml), সেটি সবার আগে ১ নম্বরে রান হবে
-    sorted_keys = sorted(
-        BOARDS_CONFIG.keys(),
-        key=lambda k: (os.path.exists(BOARDS_CONFIG[k]["xml_file"]), len(history.get(k, [])))
-    )
+    # যদি ম্যানুয়ালি রান করা হয়, তবে সব বোর্ড রান হবে। 
+    # আর যদি অটোমেটিক শিডিউল থেকে রান হয়, তবে বর্তমান ঘণ্টা অনুযায়ী মাত্র ১টি বোর্ড রান হবে।
+    is_manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    
+    if is_manual:
+        boards_to_run = board_keys
+        print("🚀 Manual run: Processing all boards.")
+    else:
+        current_hour = datetime.datetime.utcnow().hour
+        board_index = (current_hour // 3) % len(board_keys)
+        boards_to_run = [board_keys[board_index]]
+        print(f"⏰ Scheduled run: Processing board -> {boards_to_run[0]} (Hour UTC: {current_hour})")
 
-    for key in sorted_keys:
+    for key in boards_to_run:
         cfg = BOARDS_CONFIG[key]
         try:
             topic = random.choice(cfg["topics"])
@@ -292,10 +270,9 @@ if __name__ == "__main__":
             })
             build_rss(cfg["board_name"], cfg["xml_file"], history[key])
             print(f"✅ Updated {cfg['xml_file']} successfully!", flush=True)
-            time.sleep(15)
         except Exception as e:
-            print(f"⚠️ Skipped {key} temporarily: {e}", flush=True)
+            print(f"⚠️ Skipped {key}: {e}", flush=True)
 
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
-    print("\n🎉 All 8 boards updated and saved for lifetime history!", flush=True)
+    print("\n🎉 Done!", flush=True)
