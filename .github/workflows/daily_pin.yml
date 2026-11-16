@@ -2,7 +2,7 @@ name: USA Pinterest Auto Poster
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -21,12 +21,13 @@ jobs:
           python-version: '3.11'
 
       - name: Install libraries
-        run: pip install requests Pillow huggingface_hub gradio_client
+        run: pip install requests Pillow gradio_client
 
       - name: Generate AI Pins and Update RSS
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python auto_pin.py
 
       - name: Save and Publish to Website
@@ -34,5 +35,5 @@ jobs:
           git config user.name "Catherine Auto Bot"
           git config user.email "bot@catherinewilliamshub.github.io"
           git add -A
-          git commit -m "Update 5 boards with Official FLUX.1 HD images" || exit 0
+          git commit -m "Timed auto-post RSS feeds" || exit 0
           git push
