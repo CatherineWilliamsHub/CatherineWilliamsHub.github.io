@@ -1,5 +1,5 @@
 import os, re, io, time, json, uuid, random, datetime, urllib.parse
-from email.utils import formatdate
+from email.utils import formatdate, parsedate_to_datetime
 from xml.sax.saxutils import escape
 import requests
 from PIL import Image, ImageOps
@@ -143,6 +143,15 @@ def load_history():
             return data
     return {k: [] for k in BOARDS_CONFIG}
 
+def parse_pub_date(item):
+    try:
+        dt = parsedate_to_datetime(item.get("pub_date", ""))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=datetime.timezone.utc)
+        return dt
+    except Exception:
+        return datetime.datetime.min.replace(tzinfo=datetime.timezone.utc)
+
 def generate_pin_content(cfg, topic):
     full_img_prompt = f"{topic}. {cfg['style']}"
     prompt = f"""Create a viral US Pinterest Pin for board "{cfg['board_name']}" on topic "{topic}".
@@ -238,7 +247,7 @@ if __name__ == "__main__":
         boards_to_run = board_keys
         print("🚀 Manual run: Processing all boards.")
     else:
-        current_hour = datetime.datetime.utcnow().hour
+        current_hour = datetime.datetime.now(datetime.timezone.utc).hour
         board_index = (current_hour // 3) % len(board_keys)
         boards_to_run = [board_keys[board_index]]
         print(f"⏰ Scheduled run: Processing board -> {boards_to_run[0]} (Hour UTC: {current_hour})")
@@ -269,6 +278,14 @@ if __name__ == "__main__":
             print(f"✅ Updated {cfg['xml_file']} successfully!", flush=True)
         except Exception as e:
             print(f"⚠️ Skipped {key}: {e}", flush=True)
+
+    # সব বোর্ডের সর্বশেষ ২০টি পিন নিয়ে কমন facebook.xml তৈরি
+    all_items = []
+    for k in board_keys:
+        all_items.extend(history.get(k, []))
+    all_items.sort(key=parse_pub_date, reverse=True)
+    build_rss("All Latest Inspiration", "facebook.xml", all_items)
+    print("✅ Updated master feed facebook.xml successfully!", flush=True)
 
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
