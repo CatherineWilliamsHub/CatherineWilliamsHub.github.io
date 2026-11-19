@@ -14,12 +14,12 @@ BOARDS_CONFIG = {
     "jewelry": {
         "board_name": "Luxury Jewelry & Engagement Rings",
         "xml_file": "jewelry.xml",
-        "instruction": "Include details about the metal (14k/18k Gold, Platinum), gemstone cut (Oval, Emerald, Pear), and styling tips.",
-        "hashtags": "#EngagementRings #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryInspo",
-        "style": "High-end close-up commercial luxury jewelry photography on aesthetic cream velvet and white marble, warm sunlit diamond sparkles, crystal-clear facets and polished 18k gold texture, 8k photorealistic, sharp focus, no text",
+        "instruction": "Include details about the metal (14k/18k Gold, Platinum), gemstone cut (Oval, Emerald, Pear), and why it makes a stunning holiday engagement ring or Christmas jewelry gift.",
+        "hashtags": "#EngagementRings #ChristmasEngagement #HolidayJewelryGifts #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryGiftIdeas",
+        "style": "High-end close-up commercial luxury jewelry photography on aesthetic cream velvet and white marble with subtle warm golden bokeh lights, sunlit diamond sparkles, crystal-clear facets and polished 18k gold texture, 8k photorealistic, sharp focus, no text",
         "topics": [
-            "brilliant oval cut solitaire diamond engagement ring with hidden halo on thin 18k yellow gold band in a cream velvet ring box",
-            "aesthetic layered dainty 14k gold necklaces with herringbone chain, diamond pendant, and gold hoop earrings on white silk",
+            "brilliant oval cut solitaire diamond engagement ring with hidden halo on thin 18k yellow gold band in a cream velvet ring box with warm holiday glow",
+            "aesthetic layered dainty 14k gold necklaces with herringbone chain, diamond pendant, and gold hoop earrings styled as a luxury Christmas gift on white silk",
             "emerald cut diamond engagement ring stacked with a diamond eternity wedding band on a woman's graceful hand",
             "luxury marble jewelry tray displaying a sparkling diamond tennis bracelet, gold chunky rings, and pearl drop earrings",
             "pear-shaped diamond engagement ring with pave gold band sparkling in warm golden sunlight on beige linen",
@@ -30,32 +30,32 @@ BOARDS_CONFIG = {
     "nails": {
         "board_name": "Trending Nails",
         "xml_file": "nails.xml",
-        "instruction": "Mention nail shape (Almond/Coffin), colors, and salon request tips.",
-        "hashtags": "#TrendingNails #NailArtDesigns #AlmondNails #AcrylicNails #ManicureInspo",
-        "style": "Close-up beauty salon photograph of a woman's graceful hand resting on a cream sweater, all five manicured fingernails clearly visible, intricate nail art on every single nail, glossy gel topcoat, bright studio lighting, sharp focus, 8k photorealistic, no text",
+        "instruction": "Mention nail shape (Almond/Coffin), festive winter/holiday colors, and salon request tips.",
+        "hashtags": "#ChristmasNails #HolidayNailDesigns #WinterNails #TrendingNails #AlmondNails #FestiveManicure #NailArtIdeas",
+        "style": "Close-up beauty salon photograph of a woman's graceful hand resting on a cozy cream knit sweater, all five manicured fingernails clearly visible, intricate festive nail art on every single nail, glossy gel topcoat, bright studio lighting, sharp focus, 8k photorealistic, no text",
         "topics": [
-            "glossy lavender and blue ombre almond nails with delicate 3D butterfly nail art and silver sparkles",
-            "sheer milky pink almond nails with 3D white floral petals and thin gold chrome swirls",
-            "deep royal blue and gold marble swirl coffin acrylic nails with mirror gloss finish",
-            "soft blush pink French tip almond nails with cute hand-painted red cherry micro art",
-            "icy blue glitter ombre almond nails with clean silver chrome French tips",
-            "warm tortoise-shell and burgundy red floral swirl almond gel nails with gold foil"
+            "glossy deep cranberry red and gold chrome swirl almond Christmas nails with mirror gloss finish",
+            "sheer milky white almond winter nails with delicate silver snowflake art and subtle glitter sparkles",
+            "emerald green velvet cat-eye almond holiday nails with dainty gold star accents",
+            "soft blush pink French tip almond nails with cute minimalist red candy cane and bow micro art",
+            "icy silver glitter ombre almond nails with clean white chrome French tips for winter",
+            "burgundy red and gold foil tortoise-shell almond gel nails with glossy topcoat"
         ],
         "backup": "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1080&h=1620&fit=crop&q=95"
     },
     "hairstyles": {
         "board_name": "Trending Hairstyles & Hair Color",
         "xml_file": "hairstyles.xml",
-        "instruction": "Mention the haircut/layering style, hair color technique (Balayage, Gloss, Highlights), and styling tips.",
-        "hashtags": "#TrendingHairstyles #HairColorIdeas #BalayageHair #HairInspo #SalonHair",
+        "instruction": "Mention the haircut/layering style, hair color technique (Balayage, Gloss, Highlights), and holiday party styling tips.",
+        "hashtags": "#HolidayHairstyles #ChristmasPartyHair #TrendingHairstyles #WinterHairColor #BalayageHair #HairInspo #UpdoHairstyles",
         "style": "Back-angle luxury hair salon photography showing a woman's voluminous healthy hair clearly, silky glossy hair strands, natural studio lighting, ultra-sharp focus on hair texture and color blend, 8k photorealistic, no text",
         "topics": [
-            "long layered caramel blonde balayage beach waves with bright face-framing highlights",
+            "romantic holiday party half-up wavy hairstyle secured with a luxury velvet ribbon bow on caramel blonde balayage hair",
             "glossy espresso brunette butterfly haircut with bouncy blowout curls and curtain bangs",
-            "romantic boho half-up fishtail braided hairstyle on honey blonde wavy hair with pearl pins",
+            "elegant braided crown updo with pearl hair pins on honey blonde wavy hair for winter events",
             "rich dimensional copper auburn long wavy hair with warm golden shine in natural light",
-            "effortless chic French twist claw clip updo on dimensional bronde hair with loose tendrils",
-            "silky vanilla cream blonde lob haircut with soft textured waves and shadow root"
+            "effortless chic French twist claw clip updo on dimensional bronde hair with loose face-framing tendrils",
+            "silky vanilla cream blonde lob haircut with soft Hollywood waves and shadow root"
         ],
         "backup": "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1080&h=1620&fit=crop&q=95"
     },
@@ -77,27 +77,26 @@ BOARDS_CONFIG = {
     "patio": {
         "board_name": "Cozy Patio, Garden & Backyard Ideas",
         "xml_file": "patio.xml",
-        "instruction": "Include 3 outdoor styling tips (lighting, seating, plants) to create this cozy American backyard or patio.",
-        "hashtags": "#PatioDecor #BackyardIdeas #OutdoorLiving #CozyGarden #PorchDecor",
-        "style": "Architectural Digest outdoor living and American backyard photography at golden hour dusk, warm glowing Edison string lights, cozy natural wood and rattan furniture, lush green plants, 8k photorealistic, sharp focus, no text",
+        "instruction": "Include 3 outdoor styling tips (lighting, greenery, seating) to create this cozy American winter porch or backyard.",
+        "hashtags": "#ChristmasPorchDecor #OutdoorChristmasDecor #WinterPatio #PatioDecor #BackyardIdeas #OutdoorLights #CozyPorch",
+        "style": "Architectural Digest outdoor living and American front porch/backyard photography at golden hour dusk, warm glowing string lights, cozy natural wood and evergreen winter accents, 8k photorealistic, sharp focus, no text",
         "topics": [
-            "cozy backyard stone fire pit seating area with cushioned wooden chairs, warm Edison string lights, and landscaping",
-            "covered wooden pergola patio with outdoor dining table, woven pendant lamps, and trailing ivy plants",
-            "aesthetic small apartment balcony patio at dusk with rattan egg chair, cream throw pillows, and glowing lanterns",
-            "modern backyard oasis with wooden deck, beige outdoor sectional sofa, fire bowl, and potted olive trees",
-            "welcoming American front porch makeover with wooden rocking chairs, layered outdoor rugs, and blooming planters",
-            "bohemian garden relaxation nook with macrame hanging chair, fairy lights, stone pathway, and blooming hydrangeas"
+            "welcoming American Christmas front porch decor with wooden rocking chairs, evergreen pine garland, warm fairy lights, and lantern planters",
+            "cozy winter backyard stone fire pit seating area with cushioned wooden chairs, plaid throw blankets, and warm Edison string lights",
+            "covered wooden pergola patio styled for the holidays with evergreen wreaths, woven pendant lamps, and glowing candles",
+            "aesthetic small apartment balcony patio at dusk with rattan egg chair, cream throw pillows, mini lit pine tree, and lanterns",
+            "modern backyard oasis with wooden deck, outdoor sectional sofa, fire bowl, and warm winter landscape lighting"
         ],
         "backup": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1080&h=1620&fit=crop&q=95"
     },
     "pets": {
         "board_name": "Must-Have Pet Products & Care",
         "xml_file": "pets.xml",
-        "instruction": "Highlight why this pet product is a must-have for US pet owners, plus 2 care tips.",
-        "hashtags": "#PetProducts #DogMomMustHaves #CatFurniture #CozyPetHome #PetCareTips",
-        "style": "High-end commercial pet product catalog photograph in a bright aesthetic beige American living room, crystal clear sharp focus on the luxury pet product and a cute well-groomed pet using it, natural daylight, 8k photorealistic, no text",
+        "instruction": "Highlight why this pet product is a must-have holiday gift or cozy winter essential for US pet owners, plus 2 care tips.",
+        "hashtags": "#ChristmasGiftsForDogs #PetProducts #DogMomMustHaves #CatFurniture #CozyPetHome #PetHolidayGifts #PetCareTips",
+        "style": "High-end commercial pet product catalog photograph in a bright aesthetic beige American living room with subtle warm holiday lights in the background, crystal clear sharp focus on the luxury pet product and a cute well-groomed pet using it, 8k photorealistic, no text",
         "topics": [
-            "adorable Golden Retriever puppy resting inside a round cream plush boucle orthopedic donut dog bed on oak hardwood floor",
+            "adorable Golden Retriever puppy resting inside a round cream plush boucle orthopedic donut dog bed near a softly lit Christmas tree",
             "fluffy British Shorthair cat lounging on a modern aesthetic natural oak wood cat tree tower with white sherpa cushions",
             "elevated bamboo dog feeding station with two matte white ceramic bowls beside a cute French Bulldog puppy",
             "modern white ceramic pet water fountain and smart automatic feeder in a bright clean kitchen beside a cute tabby cat",
@@ -108,28 +107,28 @@ BOARDS_CONFIG = {
     "beauty": {
         "board_name": "Health and Beauty Routines",
         "xml_file": "beauty.xml",
-        "instruction": "Include a step-by-step routine order (Step 1, Step 2, Step 3) for women to save.",
-        "hashtags": "#SkincareRoutine #GlowingSkinTips #BeautyRoutine #SelfCareAesthetic #CleanBeauty",
+        "instruction": "Include a step-by-step winter skincare or holiday self-care routine order (Step 1, Step 2, Step 3) for women to save.",
+        "hashtags": "#WinterSkincareRoutine #HolidayBeautyGifts #SkincareRoutine #GlowingSkinTips #SelfCareAesthetic #CleanBeauty #BeautyGiftSet",
         "style": "Luxury beauty skincare commercial flat-lay photograph on a clean white marble vanity, soft morning sunlight, aesthetic frosted glass dropper bottles and cream jars, ultra-sharp focus, 8k photorealistic, no text",
         "topics": [
-            "glowing glass skin morning skincare lineup with frosted glass serum dropper bottles, cream jar, and rose quartz roller on marble tray",
+            "hydrating winter glass skin morning skincare lineup with frosted glass hyaluronic serum dropper bottles, rich cream jar, and rose quartz roller on marble tray",
             "nighttime anti-aging skincare arrangement with amber glass retinol bottle, peptide cream jar, and silk sleep mask",
-            "natural hair care flat-lay with glass rosemary oil dropper bottle, wooden bamboo paddle brush, and silk scrunchies",
-            "everything shower spa routine essentials with whipped pink body scrub jar, body oil bottle, dry brush, and white towels"
+            "luxury holiday self-care spa flat-lay with whipped body scrub jar, nourishing body oil bottle, dry brush, and white towels",
+            "natural hair repair flat-lay with glass rosemary oil dropper bottle, wooden bamboo paddle brush, and silk scrunchies"
         ],
         "backup": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1080&h=1620&fit=crop&q=95"
     },
     "diet": {
         "board_name": "Healthy Diet & Weight Loss Meals",
         "xml_file": "diet.xml",
-        "instruction": "Include estimated Calories & Protein macros, plus ingredients and quick prep steps.",
-        "hashtags": "#HighProteinMeals #HealthyMealPrep #WeightLossRecipes #LowCalorieMeals #CleanEating",
+        "instruction": "Include estimated Calories & Protein macros, plus ingredients and quick prep steps for healthy holiday eating.",
+        "hashtags": "#HealthyHolidayRecipes #HighProteinMeals #HealthyMealPrep #WeightLossRecipes #LowCalorieMeals #CleanEating #GuiltFreeTreats",
         "style": "Professional food magazine overhead photograph on a bright white marble kitchen counter, vibrant fresh ingredients, natural morning daylight, ultra-sharp focus, 8k photorealistic, no text",
         "topics": [
             "high-protein meal prep glass containers filled with grilled herb chicken breast, sliced avocado, roasted sweet potato, and broccoli",
-            "thick creamy green smoothie in a clear glass jar topped with fresh raspberries, chia seeds, and sliced almonds",
+            "festive cranberry pomegranate high-protein smoothie bowl in a clear glass bowl topped with chia seeds and sliced almonds",
             "pan-seared honey garlic salmon fillet with roasted asparagus spears and lemon wedges on a white ceramic plate",
-            "three glass mason jars layered with high-protein vanilla overnight oats, chia pudding, and fresh blueberries and strawberries"
+            "three glass mason jars layered with high-protein cinnamon apple overnight oats, chia pudding, and fresh berries"
         ],
         "backup": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1080&h=1620&fit=crop&q=95"
     }
@@ -233,8 +232,6 @@ if __name__ == "__main__":
     history = load_history()
     board_keys = list(BOARDS_CONFIG.keys())
 
-    # যদি ম্যানুয়ালি রান করা হয়, তবে সব বোর্ড রান হবে। 
-    # আর যদি অটোমেটিক শিডিউল থেকে রান হয়, তবে বর্তমান ঘণ্টা অনুযায়ী মাত্র ১টি বোর্ড রান হবে।
     is_manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
     
     if is_manual:
