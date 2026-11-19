@@ -62,15 +62,15 @@ BOARDS_CONFIG = {
     "homedecor": {
         "board_name": "Home Decor",
         "xml_file": "homedecor.xml",
-        "instruction": "Include 3 interior styling tips to recreate this cozy look in a US home.",
-        "hashtags": "#HomeDecor #CozyHome #LivingRoomDecor #InteriorDesignIdeas #ApartmentDecor",
-        "style": "Architectural Digest interior design photography, warm golden sunlight streaming through windows, cozy beige and natural oak wood aesthetic, ultra-sharp focus, 8k photorealistic, no text",
+        "instruction": "Include 3 interior styling tips to recreate this cozy look in a US home, weaving in natural keywords like vintage christmas decor, christmas living room, or apartment christmas decor.",
+        "hashtags": "#VintageChristmasDecorIdeas #ChristmasHomeDecor #ChristmasLivingRoom #ApartmentChristmasDecor #ClassicChristmasDecor #SimpleChristmasDecor #ChristmasRoomDecorIdeas #WhimsicalChristmasDecor #VintageChristmasDecor #LivingRoomChristmasDecor #CozyChristmasDecor #ChristmasHouseDecor",
+        "style": "Architectural Digest interior design photography, warm golden sunlight and festive christmas glow streaming through windows, cozy beige and natural oak wood aesthetic with subtle tasteful holiday accents, ultra-sharp focus, 8k photorealistic, no text",
         "topics": [
-            "cozy neutral living room with plush cream cloud sofa, knit throw pillows, oak wood coffee table, and arched brass mirror",
-            "modern farmhouse kitchen with white quartz waterfall island, brass pendant lights, and woven wooden barstools",
-            "aesthetic small bedroom makeover with layered beige linen bedding, warm glowing fairy lights, and indoor olive tree",
-            "luxury spa bathroom with freestanding soaking tub, warm backlit round mirror, and wooden bath tray with candles",
-            "chic entryway console table styling with oversized round brass mirror, woven baskets, and pampas grass vase"
+            "vintage christmas decor ideas in a cozy neutral living room with plush cream cloud sofa, knit throw pillows, oak wood coffee table, and arched brass mirror",
+            "christmas home decor and living room styling with warm glowing tree lights, garlands, neutral stockings, and natural wood accents",
+            "apartment christmas decor in a chic small living space with a slim flocked tree, warm fairy lights, and cozy textured throws",
+            "classic christmas decor and cozy christmas decor in a sunlit living room with brass candleholders, pine greenery, and neutral tones",
+            "simple christmas decor and whimsical christmas decor in a stylish home interior with subtle festive touches and warm lighting"
         ],
         "backup": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1080&h=1620&fit=crop&q=95"
     },
