@@ -260,5 +260,107 @@ def generate_official_ai_image(image_prompt, cfg, filepath):
                 print(f"⚠️ HF Router {model_id} error: {e}", flush=True)
     else:
         print("⚠️ HF_TOKEN is missing in GitHub Secrets!", flush=True)
+# 2) Gradio Spaces fallback (passing HF_TOKEN)
+    flux_spaces = ["black-forest-labs/FLUX.1-schnell", "multimodalart/FLUX.1-merged"]
+    for space_name in flux_spaces:
+        try:
+            g_client = create_gradio_client(space_name)
+            result = g_client.predict(image_prompt, 0, True, 1024, 1536, 4, api_name="/infer")
+            img_out = result[0] if isinstance(result, (list, tuple)) else result
+            img_path = img_out.get("path") if isinstance(img_out, dict) else img_out
+            if img_path and os.path.exists(img_path):
+                with Image.open(img_path) as im:
+                    sz = save_pil_image(im, filepath)
+                print(f"🎨 AI Image generated via Gradio ({space_name}) | {sz} bytes", flush=True)
+                return sz
+        except Exception as e:
+            print(f"⚠️ Gradio Space {space_name} error: {e}", flush=True)
 
-    #
+    # 3) Last-resort backup image
+    print("⚠️ All AI image sources failed — using Unsplash backup image.", flush=True)
+    r = requests.get(cfg["backup"], timeout=30)
+    im = Image.open(io.BytesIO(r.content))
+    return save_pil_image(im, filepath)
+
+def is_valid_local_image(image_url):
+    prefix = f"{SITE_URL}/images/"
+    if image_url.startswith(prefix):
+        fname = image_url[len(prefix):]
+        fpath = os.path.join("images", fname)
+        return os.path.exists(fpath) and os.path.getsize(fpath) > 5000
+    return True
+
+def build_rss(board_title, xml_file, items):
+    rss_items = ""
+    valid_items = [it for it in items if is_valid_local_image(it.get("image_url", ""))]
+    for it in valid_items[:20]:
+        rss_items += f"""
+    <item>
+      <title>{escape(it['title'])}</title>
+      <link>{escape(it['link'])}</link>
+      <description>{escape(it['description'])}</description>
+      <pubDate>{it['pub_date']}</pubDate>
+      <guid isPermaLink="false">{escape(it['guid'])}</guid>
+      <enclosure url="{escape(it['image_url'])}" length="{it['length']}" type="image/jpeg"/>
+      <media:content url="{escape(it['image_url'])}" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="{escape(it['image_url'])}" width="1000" height="1500"/>
+    </item>"""
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Catherine Williams Hub - {escape(board_title)}</title>
+    <link>{SITE_URL}</link>
+    <atom:link href="{SITE_URL}/{escape(xml_file)}" rel="self" type="application/rss+xml"/>
+    <description>Daily US inspiration for {escape(board_title)}</description>{rss_items}
+  </channel>
+</rss>"""
+    with open(xml_file, "w", encoding="utf-8") as f:
+        f.write(xml.strip())
+
+if __name__ == "__main__":
+    history = load_history()
+    board_keys = list(BOARDS_CONFIG.keys())
+
+    target_board = get_oldest_board(history, board_keys)
+    boards_to_run = [target_board]
+    print(f"🚀 Processing oldest board -> {target_board}", flush=True)
+
+    for key in boards_to_run:
+        cfg = BOARDS_CONFIG[key]
+        try:
+            topic = random.choice(cfg["topics"])
+            print(f"\n📌 Board: {cfg['board_name']} | Topic: {topic}", flush=True)
+            content = generate_pin_content(cfg, topic)
+            pin_id = str(uuid.uuid4())[:8]
+            filename = f"{key}_{pin_id}.jpg"
+            filepath = os.path.join("images", filename)
+
+            img_sz = generate_official_ai_image(content["image_prompt"], cfg, filepath)
+            img_url = f"{SITE_URL}/images/{filename}"
+
+            history.setdefault(key, []).insert(0, {
+                "guid": f"{key}-{pin_id}",
+                "title": content["title"],
+                "description": content["description"],
+                "link": f"{SITE_URL}/?pin={key}-{pin_id}",
+                "image_url": img_url,
+                "length": img_sz,
+                "pub_date": formatdate(localtime=False, usegmt=True)
+            })
+            print(f"✅ Created new pin for {key}!", flush=True)
+        except Exception as e:
+            print(f"⚠️ Skipped {key}: {e}", flush=True)
+
+    for k in board_keys:
+        build_rss(BOARDS_CONFIG[k]["board_name"], BOARDS_CONFIG[k]["xml_file"], history.get(k, []))
+
+    all_items = []
+    for k in board_keys:
+        all_items.extend(history.get(k, []))
+    all_items.sort(key=parse_pub_date, reverse=True)
+    build_rss("All Latest Inspiration", "facebook.xml", all_items)
+    print("✅ Updated all 8 board feeds and master facebook.xml successfully!", flush=True)
+
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+    print("\n🎉 Done!", flush=True)
