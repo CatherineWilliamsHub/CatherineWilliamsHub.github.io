@@ -152,13 +152,32 @@ def parse_pub_date(item):
     except Exception:
         return datetime.datetime.min.replace(tzinfo=datetime.timezone.utc)
 
+def get_oldest_board(history, board_keys):
+    oldest_key = board_keys[0]
+    oldest_dt = datetime.datetime.max.replace(tzinfo=datetime.timezone.utc)
+    for k in board_keys:
+        items = history.get(k, [])
+        if not items:
+            return k
+        dt = parse_pub_date(items[0])
+        if dt < oldest_dt:
+            oldest_dt = dt
+            oldest_key = k
+    return oldest_key
+
 def generate_pin_content(cfg, topic):
     full_img_prompt = f"{topic}. {cfg['style']}"
     prompt = f"""Create a viral US Pinterest Pin for board "{cfg['board_name']}" on topic "{topic}".
     {cfg['instruction']}
     Respond ONLY in JSON: {{"title": "Catchy SEO title under 85 chars", "description": "SEO description (250-380 chars) ending with {cfg['hashtags']}"}}"""
 
-    for model in ["gemini-flash-lite-latest", "gemini-2.0-flash-lite", "gemini-2.0-flash"]:
+    models = [
+        "gemini-2.5-flash-lite",
+        "gemini-2.5-flash",
+        "gemini-2.0-flash-lite",
+        "gemini-2.0-flash"
+    ]
+    for model in models:
         try:
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
             r = requests.post(url, json={"contents": [{"parts": [{"text": prompt}]}]}, timeout=25)
@@ -171,9 +190,13 @@ def generate_pin_content(cfg, topic):
                     return data
         except Exception:
             pass
+
+    clean_title = topic.strip().title()
+    if len(clean_title) > 68:
+        clean_title = clean_title[:68].rsplit(" ", 1)[0]
     return {
-        "title": f"{topic[:65].title()} | Inspiration",
-        "description": f"Discover {topic}. {cfg['instruction']} {cfg['hashtags']}",
+        "title": f"{clean_title} | Ideas",
+        "description": f"Save this {cfg['board_name'].lower()} inspiration featuring {topic}. Tap the link for full styling details and more holiday ideas! {cfg['hashtags']}",
         "image_prompt": full_img_prompt
     }
 
@@ -199,23 +222,22 @@ def generate_official_ai_image(image_prompt, cfg, filepath):
         except Exception:
             pass
 
-    try:
-        clean_p = re.sub(r"[^a-zA-Z0-9, ]", "", image_prompt)[:220]
-        enc = urllib.parse.quote(clean_p)
-        r = requests.get(f"https://image.pollinations.ai/prompt/{enc}?width=1024&height=1536&model=flux&enhance=false", timeout=50)
-        if r.status_code == 200 and len(r.content) > 20000:
-            im = Image.open(io.BytesIO(r.content))
-            return save_pil_image(im, filepath)
-    except Exception:
-        pass
-
     r = requests.get(cfg["backup"], timeout=30)
     im = Image.open(io.BytesIO(r.content))
     return save_pil_image(im, filepath)
 
+def is_valid_local_image(image_url):
+    prefix = f"{SITE_URL}/images/"
+    if image_url.startswith(prefix):
+        fname = image_url[len(prefix):]
+        fpath = os.path.join("images", fname)
+        return os.path.exists(fpath) and os.path.getsize(fpath) > 5000
+    return True
+
 def build_rss(board_title, xml_file, items):
     rss_items = ""
-    for it in items[:20]:
+    valid_items = [it for it in items if is_valid_local_image(it.get("image_url", ""))]
+    for it in valid_items[:20]:
         rss_items += f"""
     <item>
       <title>{escape(it['title'])}</title>
@@ -224,13 +246,15 @@ def build_rss(board_title, xml_file, items):
       <pubDate>{it['pub_date']}</pubDate>
       <guid isPermaLink="false">{escape(it['guid'])}</guid>
       <enclosure url="{escape(it['image_url'])}" length="{it['length']}" type="image/jpeg"/>
-      <media:content url="{escape(it['image_url'])}" type="image/jpeg" medium="image"/>
+      <media:content url="{escape(it['image_url'])}" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="{escape(it['image_url'])}" width="1000" height="1500"/>
     </item>"""
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - {escape(board_title)}</title>
     <link>{SITE_URL}</link>
+    <atom:link href="{SITE_URL}/{escape(xml_file)}" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for {escape(board_title)}</description>{rss_items}
   </channel>
 </rss>"""
@@ -242,15 +266,14 @@ if __name__ == "__main__":
     board_keys = list(BOARDS_CONFIG.keys())
 
     is_manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
-    
+
     if is_manual:
         boards_to_run = board_keys
         print("🚀 Manual run: Processing all boards.")
     else:
-        current_hour = datetime.datetime.now(datetime.timezone.utc).hour
-        board_index = (current_hour // 3) % len(board_keys)
-        boards_to_run = [board_keys[board_index]]
-        print(f"⏰ Scheduled run: Processing board -> {boards_to_run[0]} (Hour UTC: {current_hour})")
+        target_board = get_oldest_board(history, board_keys)
+        boards_to_run = [target_board]
+        print(f"⏰ Scheduled run: Processing oldest board -> {target_board}")
 
     for key in boards_to_run:
         cfg = BOARDS_CONFIG[key]
@@ -274,10 +297,13 @@ if __name__ == "__main__":
                 "length": img_sz,
                 "pub_date": formatdate(localtime=False, usegmt=True)
             })
-            build_rss(cfg["board_name"], cfg["xml_file"], history[key])
-            print(f"✅ Updated {cfg['xml_file']} successfully!", flush=True)
+            print(f"✅ Created new pin for {key}!", flush=True)
         except Exception as e:
             print(f"⚠️ Skipped {key}: {e}", flush=True)
+
+    # সব ৮টি বোর্ডের RSS ফাইল নতুন Pinterest-friendly ট্যাগসহ আপডেট
+    for k in board_keys:
+        build_rss(BOARDS_CONFIG[k]["board_name"], BOARDS_CONFIG[k]["xml_file"], history.get(k, []))
 
     # সব বোর্ডের সর্বশেষ ২০টি পিন নিয়ে কমন facebook.xml তৈরি
     all_items = []
@@ -285,7 +311,7 @@ if __name__ == "__main__":
         all_items.extend(history.get(k, []))
     all_items.sort(key=parse_pub_date, reverse=True)
     build_rss("All Latest Inspiration", "facebook.xml", all_items)
-    print("✅ Updated master feed facebook.xml successfully!", flush=True)
+    print("✅ Updated all 8 board feeds and master facebook.xml successfully!", flush=True)
 
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, indent=2, ensure_ascii=False)
