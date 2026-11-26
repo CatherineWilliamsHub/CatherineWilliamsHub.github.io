@@ -1,14 +1,14 @@
-import os, re, io, time, json, uuid, random, datetime, urllib.parse
+import os, re, io, time, json, uuid, base64, random, datetime, urllib.parse
 from email.utils import formatdate, parsedate_to_datetime
 from xml.sax.saxutils import escape
 import requests
 from PIL import Image, ImageOps
-from gradio_client import Client
 
 GEMINI_API_KEY = (os.environ.get("GEMINI_API_KEY") or "").strip()
 HF_TOKEN = (os.environ.get("HF_TOKEN") or "").strip()
 SITE_URL = "https://catherinewilliamshub.github.io"
 HISTORY_FILE = "pins_history_v6.json"
+_GEMINI_MODELS_CACHE = None
 
 BOARDS_CONFIG = {
     "jewelry": {
@@ -165,6 +165,35 @@ def get_oldest_board(history, board_keys):
             oldest_key = k
     return oldest_key
 
+def discover_gemini_models():
+    global _GEMINI_MODELS_CACHE
+    if _GEMINI_MODELS_CACHE is not None:
+        return _GEMINI_MODELS_CACHE
+    text_models, image_gen_models, imagen_models = [], [], []
+    if GEMINI_API_KEY:
+        try:
+            r = requests.get(
+                f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}",
+                timeout=20
+            )
+            if r.status_code == 200:
+                for m in r.json().get("models", []):
+                    name = m.get("name", "").replace("models/", "")
+                    methods = m.get("supportedGenerationMethods", [])
+                    low = name.lower()
+                    if "predict" in methods and "imagen" in low:
+                        imagen_models.append(name)
+                    elif "generateContent" in methods:
+                        if "image" in low and "imagen" not in low:
+                            image_gen_models.append(name)
+                        elif "flash" in low and not any(x in low for x in ["image", "audio", "tts", "live", "embedding"]):
+                            text_models.append(name)
+                print(f"🔎 Discovered Gemini models -> text: {text_models[:4]} | img: {image_gen_models[:3]} | imagen: {imagen_models[:3]}", flush=True)
+        except Exception as e:
+            print(f"⚠️ Model discovery error: {e}", flush=True)
+    _GEMINI_MODELS_CACHE = (text_models, image_gen_models, imagen_models)
+    return _GEMINI_MODELS_CACHE
+
 def generate_pin_content(cfg, topic):
     full_img_prompt = f"{topic}. {cfg['style']}"
     prompt = f"""Create a viral US Pinterest Pin for board "{cfg['board_name']}" on topic "{topic}".
@@ -174,17 +203,19 @@ def generate_pin_content(cfg, topic):
     if not GEMINI_API_KEY:
         print("⚠️ GEMINI_API_KEY is missing in GitHub Secrets!", flush=True)
     else:
-        models = [
-            "gemini-2.5-flash-lite",
-            "gemini-2.5-flash",
-            "gemini-2.0-flash-lite",
-            "gemini-2.0-flash"
-        ]
+        discovered_text, _, _ = discover_gemini_models()
+        candidates = ["gemini-3.5-flash-lite", "gemini-3.8-flash"] + discovered_text
+        seen, models = set(), []
+        for m in candidates:
+            if m and m not in seen:
+                seen.add(m)
+                models.append(m)
+
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseMimeType": "application/json"}
         }
-        for model in models:
+        for model in models[:6]:
             try:
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
                 r = requests.post(url, json=payload, timeout=25)
@@ -197,9 +228,8 @@ def generate_pin_content(cfg, topic):
                             data["image_prompt"] = full_img_prompt
                             print(f"✍️ Gemini text generated using {model}", flush=True)
                             return data
-                    print(f"⚠️ Gemini {model} returned unexpected format: {txt[:150]}", flush=True)
                 else:
-                    print(f"⚠️ Gemini {model} failed ({r.status_code}): {r.text[:180]}", flush=True)
+                    print(f"⚠️ Gemini {model} failed ({r.status_code}): {r.text[:160]}", flush=True)
             except Exception as e:
                 print(f"⚠️ Gemini {model} error: {e}", flush=True)
 
@@ -219,62 +249,71 @@ def save_pil_image(img, filepath):
     img.save(filepath, format="JPEG", quality=95, optimize=True)
     return os.path.getsize(filepath)
 
-def create_gradio_client(space_name):
-    if HF_TOKEN:
-        try:
-            return Client(space_name, token=HF_TOKEN)
-        except TypeError:
-            return Client(space_name, hf_token=HF_TOKEN)
-    return Client(space_name)
-
 def generate_official_ai_image(image_prompt, cfg, filepath):
     os.makedirs("images", exist_ok=True)
 
-    # 1) Direct Hugging Face Inference Router API (most reliable with HF_TOKEN)
+    # 1) Hugging Face InferenceClient with auto provider routing (avoids deprecated hf-inference & ZeroGPU limits)
     if HF_TOKEN:
-        hf_models = [
-            "black-forest-labs/FLUX.1-schnell",
-            "stabilityai/stable-diffusion-xl-base-1.0"
-        ]
-        headers = {"Authorization": f"Bearer {HF_TOKEN}"}
-        for model_id in hf_models:
-            try:
-                api_url = f"https://router.huggingface.co/hf-inference/models/{model_id}"
-                r = requests.post(
-                    api_url,
-                    headers=headers,
-                    json={
-                        "inputs": image_prompt,
-                        "parameters": {"width": 768, "height": 1152}
-                    },
-                    timeout=90
-                )
-                if r.status_code == 200 and len(r.content) > 20000:
-                    im = Image.open(io.BytesIO(r.content))
-                    sz = save_pil_image(im, filepath)
-                    print(f"🎨 AI Image generated via HF Router ({model_id}) | {sz} bytes", flush=True)
-                    return sz
-                else:
-                    print(f"⚠️ HF Router {model_id} failed ({r.status_code}): {r.text[:180]}", flush=True)
-            except Exception as e:
-                print(f"⚠️ HF Router {model_id} error: {e}", flush=True)
-    else:
-        print("⚠️ HF_TOKEN is missing in GitHub Secrets!", flush=True)
-# 2) Gradio Spaces fallback (passing HF_TOKEN)
-    flux_spaces = ["black-forest-labs/FLUX.1-schnell", "multimodalart/FLUX.1-merged"]
-    for space_name in flux_spaces:
         try:
-            g_client = create_gradio_client(space_name)
-            result = g_client.predict(image_prompt, 0, True, 1024, 1536, 4, api_name="/infer")
-            img_out = result[0] if isinstance(result, (list, tuple)) else result
-            img_path = img_out.get("path") if isinstance(img_out, dict) else img_out
-            if img_path and os.path.exists(img_path):
-                with Image.open(img_path) as im:
+            from huggingface_hub import InferenceClient
+            hf_client = InferenceClient(provider="auto", api_key=HF_TOKEN)
+            for model_id in ["black-forest-labs/FLUX.1-schnell", "black-forest-labs/FLUX.1-dev", "Qwen/Qwen-Image"]:
+                try:
+                    res = hf_client.text_to_image(image_prompt, model=model_id)
+                    im = res if isinstance(res, Image.Image) else Image.open(io.BytesIO(res))
                     sz = save_pil_image(im, filepath)
-                print(f"🎨 AI Image generated via Gradio ({space_name}) | {sz} bytes", flush=True)
-                return sz
+                    print(f"🎨 AI Image generated via HF Auto ({model_id}) | {sz} bytes", flush=True)
+                    return sz
+                except Exception as e:
+                    print(f"⚠️ HF Auto {model_id} error: {str(e)[:180]}", flush=True)
         except Exception as e:
-            print(f"⚠️ Gradio Space {space_name} error: {e}", flush=True)
+            print(f"⚠️ HF InferenceClient error: {e}", flush=True)
+
+    # 2) Gemini Native Image Generation & Imagen via GEMINI_API_KEY
+    if GEMINI_API_KEY:
+        _, image_gen_models, imagen_models = discover_gemini_models()
+
+        for model_id in image_gen_models[:4]:
+            try:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={GEMINI_API_KEY}"
+                payload = {
+                    "contents": [{"parts": [{"text": f"Generate a high-resolution vertical 2:3 portrait photograph: {image_prompt}"}]}],
+                    "generationConfig": {"responseModalities": ["TEXT", "IMAGE"]}
+                }
+                r = requests.post(url, json=payload, timeout=60)
+                if r.status_code == 200:
+                    for cand in r.json().get("candidates", []):
+                        for part in cand.get("content", {}).get("parts", []):
+                            inline = part.get("inlineData") or part.get("inline_data")
+                            if inline and inline.get("data"):
+                                im = Image.open(io.BytesIO(base64.b64decode(inline["data"])))
+                                sz = save_pil_image(im, filepath)
+                                print(f"🎨 AI Image generated via Gemini ({model_id}) | {sz} bytes", flush=True)
+                                return sz
+                else:
+                    print(f"⚠️ Gemini Image {model_id} failed ({r.status_code}): {r.text[:160]}", flush=True)
+            except Exception as e:
+                print(f"⚠️ Gemini Image {model_id} error: {e}", flush=True)
+
+        for model_id in imagen_models[:3]:
+            try:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:predict?key={GEMINI_API_KEY}"
+                payload = {
+                    "instances": [{"prompt": image_prompt}],
+                    "parameters": {"sampleCount": 1, "aspectRatio": "3:4"}
+                }
+                r = requests.post(url, json=payload, timeout=60)
+                if r.status_code == 200:
+                    preds = r.json().get("predictions", [])
+                    if preds and preds[0].get("bytesBase64Encoded"):
+                        im = Image.open(io.BytesIO(base64.b64decode(preds[0]["bytesBase64Encoded"])))
+                        sz = save_pil_image(im, filepath)
+                        print(f"🎨 AI Image generated via Imagen ({model_id}) | {sz} bytes", flush=True)
+                        return sz
+                else:
+                    print(f"⚠️ Imagen {model_id} failed ({r.status_code}): {r.text[:160]}", flush=True)
+            except Exception as e:
+                print(f"⚠️ Imagen {model_id} error: {e}", flush=True)
 
     # 3) Last-resort backup image
     print("⚠️ All AI image sources failed — using Unsplash backup image.", flush=True)
