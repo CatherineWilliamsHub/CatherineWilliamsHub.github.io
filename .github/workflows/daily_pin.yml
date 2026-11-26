@@ -2,7 +2,7 @@ name: USA Pinterest Auto Poster
 
 on:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '23 */3 * * *'
   workflow_dispatch:
 
 permissions:
