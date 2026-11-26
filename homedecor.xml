@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - Home Decor</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/homedecor.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for Home Decor</description>
+    <item>
+      <title>Classic Christmas Decor And Cozy Christmas Decor In A Sunlit Living | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=homedecor-701ff919</link>
+      <description>Save this home decor inspiration featuring classic christmas decor and cozy christmas decor in a sunlit living room with brass candleholders, pine greenery, and neutral tones. Tap the link for full styling details and more holiday ideas! #VintageChristmasDecorIdeas #ChristmasHomeDecor #ChristmasLivingRoom #ApartmentChristmasDecor #ClassicChristmasDecor #SimpleChristmasDecor #ChristmasRoomDecorIdeas #WhimsicalChristmasDecor #VintageChristmasDecor #LivingRoomChristmasDecor #CozyChristmasDecor #ChristmasHouseDecor</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:22 GMT</pubDate>
+      <guid isPermaLink="false">homedecor-701ff919</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_701ff919.jpg" length="402969" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_701ff919.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_701ff919.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>Classic Christmas Decor And Cozy Christmas Decor In A Sunlit Livi | Inspiration</title>
       <link>https://catherinewilliamshub.github.io/?pin=homedecor-34763387</link>
@@ -11,7 +22,8 @@
       <pubDate>Thu, 26 Nov 2026 11:38:44 GMT</pubDate>
       <guid isPermaLink="false">homedecor-34763387</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_34763387.jpg" length="275415" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_34763387.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_34763387.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_34763387.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Chic Apartment Christmas Decor Ideas for Small Living Spaces</title>
@@ -20,7 +32,8 @@
       <pubDate>Mon, 23 Nov 2026 11:26:49 GMT</pubDate>
       <guid isPermaLink="false">homedecor-9c10c3c3</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_9c10c3c3.jpg" length="518117" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_9c10c3c3.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_9c10c3c3.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_9c10c3c3.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Sunlit Classic &amp; Cozy Christmas Living Room Decor Ideas</title>
@@ -29,7 +42,8 @@
       <pubDate>Sun, 22 Nov 2026 10:27:12 GMT</pubDate>
       <guid isPermaLink="false">homedecor-4aead814</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_4aead814.jpg" length="357709" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_4aead814.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_4aead814.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_4aead814.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Neutral Living Room with Vintage Christmas Decor Ideas</title>
@@ -38,7 +52,8 @@
       <pubDate>Sat, 21 Nov 2026 10:23:52 GMT</pubDate>
       <guid isPermaLink="false">homedecor-8088a15a</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_8088a15a.jpg" length="326166" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_8088a15a.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_8088a15a.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_8088a15a.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Christmas Living Room Ideas: Warm Lights &amp; Neutral Garlands</title>
@@ -47,7 +62,8 @@
       <pubDate>Fri, 20 Nov 2026 10:40:58 GMT</pubDate>
       <guid isPermaLink="false">homedecor-974abe11</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_974abe11.jpg" length="598150" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_974abe11.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_974abe11.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_974abe11.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Neutral Vintage Christmas Living Room Decor Ideas</title>
@@ -56,7 +72,8 @@
       <pubDate>Thu, 19 Nov 2026 19:30:36 GMT</pubDate>
       <guid isPermaLink="false">homedecor-2bc5e4b0</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_2bc5e4b0.jpg" length="460887" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_2bc5e4b0.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_2bc5e4b0.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_2bc5e4b0.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Neutral Vintage Christmas Living Room Decor Ideas</title>
@@ -65,7 +82,8 @@
       <pubDate>Thu, 19 Nov 2026 10:50:42 GMT</pubDate>
       <guid isPermaLink="false">homedecor-46a89371</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_46a89371.jpg" length="483825" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_46a89371.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_46a89371.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_46a89371.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Aesthetic Small Bedroom Makeover Ideas with Neutral Layers</title>
@@ -74,7 +92,8 @@
       <pubDate>Wed, 18 Nov 2026 10:50:56 GMT</pubDate>
       <guid isPermaLink="false">homedecor-4291bf3d</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_4291bf3d.jpg" length="536289" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_4291bf3d.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_4291bf3d.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_4291bf3d.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxurious Spa Bathroom Ideas with Freestanding Tub &amp; Warm Lighting</title>
@@ -83,7 +102,8 @@
       <pubDate>Mon, 16 Nov 2026 04:14:42 GMT</pubDate>
       <guid isPermaLink="false">homedecor-0efef068</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_0efef068.jpg" length="311922" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_0efef068.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_0efef068.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_0efef068.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Neutral Living Room Ideas with Cloud Sofa &amp; Oak Decor</title>
@@ -92,7 +112,8 @@
       <pubDate>Sun, 15 Nov 2026 06:35:06 GMT</pubDate>
       <guid isPermaLink="false">homedecor-1e1ff12a</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_1e1ff12a.jpg" length="321648" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_1e1ff12a.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_1e1ff12a.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_1e1ff12a.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Neutral Living Room Ideas with Cloud Sofa &amp; Oak</title>
@@ -101,7 +122,8 @@
       <pubDate>Sun, 15 Nov 2026 04:17:24 GMT</pubDate>
       <guid isPermaLink="false">homedecor-20d7d1b1</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_20d7d1b1.jpg" length="321648" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_20d7d1b1.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_20d7d1b1.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_20d7d1b1.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxury Spa Bathroom Ideas: Freestanding Tub &amp; Warm Lighting</title>
@@ -114,7 +136,8 @@
       <pubDate>Sat, 14 Nov 2026 21:05:48 GMT</pubDate>
       <guid isPermaLink="false">homedecor-ffa7843f</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_ffa7843f.jpg" length="337475" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_ffa7843f.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_ffa7843f.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_ffa7843f.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Aesthetic Small Bedroom Makeover Ideas for Small Spaces</title>
@@ -123,7 +146,8 @@
       <pubDate>Sat, 14 Nov 2026 20:50:47 GMT</pubDate>
       <guid isPermaLink="false">homedecor-26926728</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_26926728.jpg" length="415058" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_26926728.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_26926728.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_26926728.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Stunning Modern Farmhouse Kitchen with Quartz Island &amp; Brass Accents</title>
@@ -132,7 +156,8 @@
       <pubDate>Sat, 14 Nov 2026 19:03:26 GMT</pubDate>
       <guid isPermaLink="false">homedecor-09deeaef</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_09deeaef.jpg" length="345473" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_09deeaef.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_09deeaef.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_09deeaef.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>

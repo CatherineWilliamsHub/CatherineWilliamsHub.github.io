@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - Trending Nails</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/nails.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for Trending Nails</description>
+    <item>
+      <title>Sheer Milky White Almond Winter Nails With Delicate Silver | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=nails-1bdca249</link>
+      <description>Save this trending nails inspiration featuring sheer milky white almond winter nails with delicate silver snowflake art and subtle glitter sparkles. Tap the link for full styling details and more holiday ideas! #ChristmasNails #HolidayNailDesigns #WinterNails #TrendingNails #AlmondNails #FestiveManicure #NailArtIdeas</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:07 GMT</pubDate>
+      <guid isPermaLink="false">nails-1bdca249</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/nails_1bdca249.jpg" length="346232" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_1bdca249.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_1bdca249.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>Glossy Cranberry &amp; Gold Chrome Swirl Almond Christmas Nails</title>
       <link>https://catherinewilliamshub.github.io/?pin=nails-119fdbd6</link>
@@ -11,7 +22,8 @@
       <pubDate>Wed, 25 Nov 2026 03:51:34 GMT</pubDate>
       <guid isPermaLink="false">nails-119fdbd6</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/nails_119fdbd6.jpg" length="323733" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_119fdbd6.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_119fdbd6.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_119fdbd6.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Emerald Green Velvet Cat-Eye Almond Holiday Nails With Dainty Gol | Inspiration</title>
@@ -20,7 +32,8 @@
       <pubDate>Thu, 19 Nov 2026 19:30:05 GMT</pubDate>
       <guid isPermaLink="false">nails-aab4db52</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/nails_aab4db52.jpg" length="291166" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_aab4db52.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_aab4db52.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_aab4db52.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Icy Blue Glitter Ombre Almond Nails with Silver Chrome French Tips</title>
@@ -33,7 +46,8 @@ Salon request: Ask for a soft blue-to-clear glitter fade on medium almond acryli
       <pubDate>Tue, 17 Nov 2026 03:16:31 GMT</pubDate>
       <guid isPermaLink="false">nails-018bcdb0</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/nails_018bcdb0.jpg" length="257309" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_018bcdb0.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_018bcdb0.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_018bcdb0.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Dreamy Sheer Milky Pink Almond Nails with 3D Florals &amp; Gold Swirls</title>
@@ -42,25 +56,8 @@ Salon request: Ask for a soft blue-to-clear glitter fade on medium almond acryli
       <pubDate>Mon, 16 Nov 2026 04:14:20 GMT</pubDate>
       <guid isPermaLink="false">nails-bf975637</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/nails_bf975637.jpg" length="318547" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_bf975637.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>Icy Blue Glitter Ombre &amp; Silver Chrome French Almond Nails</title>
-      <link>https://catherinewilliamshub.github.io/?pin=nails-46a20f6d</link>
-      <description>Steal the spotlight with these dreamy icy blue glitter ombre almond nails featuring sleek silver chrome French tips! Save this for your next salon visit. Ask your nail tech for a soft blue-to-clear glitter fade topped with metallic silver tips on an elegant almond shape. #TrendingNails #NailArtDesigns #AlmondNails #AcrylicNails #ManicureInspo</description>
-      <pubDate>Sun, 15 Nov 2026 06:34:33 GMT</pubDate>
-      <guid isPermaLink="false">nails-46a20f6d</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/nails_46a20f6d.jpg" length="234501" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_46a20f6d.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>Deep Royal Blue &amp; Gold Marble Coffin Nails</title>
-      <link>https://catherinewilliamshub.github.io/?pin=nails-f1714ce5</link>
-      <description>Steal the spotlight with these luxe deep royal blue and gold marble swirl coffin acrylic nails. Finished with a mesmerizing mirror gloss! Ask your nail tech for deep cobalt blue polish, hand-painted liquid gold veining, and an encapsulating ultra-gloss top coat over structured coffin extensions. #TrendingNails #NailArtDesigns #AlmondNails #AcrylicNails #ManicureInspo</description>
-      <pubDate>Sun, 15 Nov 2026 04:16:50 GMT</pubDate>
-      <guid isPermaLink="false">nails-f1714ce5</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/nails_f1714ce5.jpg" length="230242" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_f1714ce5.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_bf975637.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_bf975637.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Tortoise Shell &amp; Burgundy Floral Swirl Almond Nails with Gold Foil</title>
@@ -69,7 +66,8 @@ Salon request: Ask for a soft blue-to-clear glitter fade on medium almond acryli
       <pubDate>Sat, 14 Nov 2026 21:05:11 GMT</pubDate>
       <guid isPermaLink="false">nails-39bc272e</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/nails_39bc272e.jpg" length="262081" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_39bc272e.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_39bc272e.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_39bc272e.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Deep Royal Blue &amp; Gold Marble Coffin Nails with Mirror Gloss</title>
@@ -78,7 +76,8 @@ Salon request: Ask for a soft blue-to-clear glitter fade on medium almond acryli
       <pubDate>Sat, 14 Nov 2026 20:50:13 GMT</pubDate>
       <guid isPermaLink="false">nails-63b2ffe2</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/nails_63b2ffe2.jpg" length="302132" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_63b2ffe2.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_63b2ffe2.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_63b2ffe2.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Glossy Lavender &amp; Blue Ombre Almond Nails with 3D Butterflies</title>
@@ -87,7 +86,8 @@ Salon request: Ask for a soft blue-to-clear glitter fade on medium almond acryli
       <pubDate>Sat, 14 Nov 2026 19:03:10 GMT</pubDate>
       <guid isPermaLink="false">nails-8e0595a1</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/nails_8e0595a1.jpg" length="254392" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_8e0595a1.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_8e0595a1.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_8e0595a1.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>

@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - Health and Beauty Routines</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/beauty.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for Health and Beauty Routines</description>
+    <item>
+      <title>Hydrating Winter Glass Skin Morning Skincare Lineup With Frosted | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=beauty-dfa113ca</link>
+      <description>Save this health and beauty routines inspiration featuring hydrating winter glass skin morning skincare lineup with frosted glass hyaluronic serum dropper bottles, rich cream jar, and rose quartz roller on marble tray. Tap the link for full styling details and more holiday ideas! #WinterSkincareRoutine #HolidayBeautyGifts #SkincareRoutine #GlowingSkinTips #SelfCareAesthetic #CleanBeauty #BeautyGiftSet</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:39 GMT</pubDate>
+      <guid isPermaLink="false">beauty-dfa113ca</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/beauty_dfa113ca.jpg" length="165946" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_dfa113ca.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_dfa113ca.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>DIY Natural Hair Repair Routine for Silky Winter Strands</title>
       <link>https://catherinewilliamshub.github.io/?pin=beauty-49fe9ff2</link>
@@ -11,7 +22,8 @@
       <pubDate>Tue, 24 Nov 2026 19:46:50 GMT</pubDate>
       <guid isPermaLink="false">beauty-49fe9ff2</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_49fe9ff2.jpg" length="330775" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_49fe9ff2.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_49fe9ff2.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_49fe9ff2.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Hydrating Winter Glass Skin Morning Skincare Lineup With Frosted  | Inspiration</title>
@@ -20,7 +32,8 @@
       <pubDate>Sun, 22 Nov 2026 18:46:43 GMT</pubDate>
       <guid isPermaLink="false">beauty-6a6a52b2</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_6a6a52b2.jpg" length="185099" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_6a6a52b2.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_6a6a52b2.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_6a6a52b2.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Ultimate Holiday Self-Care Routine: Glowing Winter Skin Guide</title>
@@ -29,7 +42,8 @@
       <pubDate>Sat, 21 Nov 2026 18:23:30 GMT</pubDate>
       <guid isPermaLink="false">beauty-4c736f4b</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_4c736f4b.jpg" length="241152" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_4c736f4b.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_4c736f4b.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_4c736f4b.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>DIY Natural Hair Repair Routine for Silky Holiday Hair</title>
@@ -38,7 +52,8 @@
       <pubDate>Fri, 20 Nov 2026 19:21:35 GMT</pubDate>
       <guid isPermaLink="false">beauty-705c9ca1</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_705c9ca1.jpg" length="361457" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_705c9ca1.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_705c9ca1.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_705c9ca1.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Natural Hair Repair Routine: DIY Rosemary Oil Scalp Treatment</title>
@@ -47,7 +62,8 @@
       <pubDate>Thu, 19 Nov 2026 19:41:28 GMT</pubDate>
       <guid isPermaLink="false">beauty-7d4909ac</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_7d4909ac.jpg" length="165946" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_7d4909ac.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_7d4909ac.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_7d4909ac.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>DIY Natural Hair Repair Routine for Silky Holiday Hair</title>
@@ -56,7 +72,8 @@
       <pubDate>Thu, 19 Nov 2026 19:31:22 GMT</pubDate>
       <guid isPermaLink="false">beauty-a4ae56ed</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_a4ae56ed.jpg" length="165946" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_a4ae56ed.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_a4ae56ed.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_a4ae56ed.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>The Ultimate Anti-Aging Night Routine for Ageless, Glowing Skin</title>
@@ -65,7 +82,8 @@
       <pubDate>Wed, 18 Nov 2026 19:41:56 GMT</pubDate>
       <guid isPermaLink="false">beauty-502bfed2</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_502bfed2.jpg" length="268769" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_502bfed2.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_502bfed2.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_502bfed2.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>The Ultimate Natural Hair Care Routine for Stronger, Shiny Hair ✨</title>
@@ -74,16 +92,8 @@
       <pubDate>Mon, 16 Nov 2026 04:13:34 GMT</pubDate>
       <guid isPermaLink="false">beauty-352233e0</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_352233e0.jpg" length="293935" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_352233e0.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>The Ultimate Everything Shower Routine for Glowing Skin</title>
-      <link>https://catherinewilliamshub.github.io/?pin=beauty-1cd68a02</link>
-      <description>Transform your bathroom into a luxury spa with this ultimate everything shower routine! Grab your dry brush, whipped pink body scrub, and hydrating body oil for glowing, silky-smooth skin. Save this easy step-by-step self-care guide for your next pamper night. #SkincareRoutine #GlowingSkinTips #BeautyRoutine #SelfCareAesthetic #CleanBeauty</description>
-      <pubDate>Sun, 15 Nov 2026 06:33:24 GMT</pubDate>
-      <guid isPermaLink="false">beauty-1cd68a02</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/beauty_1cd68a02.jpg" length="154458" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_1cd68a02.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_352233e0.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_352233e0.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Natural Hair Growth Routine: 3 Easy Steps for Long Hair</title>
@@ -92,7 +102,8 @@
       <pubDate>Sun, 15 Nov 2026 04:15:39 GMT</pubDate>
       <guid isPermaLink="false">beauty-089136e8</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_089136e8.jpg" length="216965" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_089136e8.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_089136e8.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_089136e8.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>The Ultimate Everything Shower Routine &amp; Spa Essentials for Glowing Skin</title>
@@ -101,7 +112,8 @@
       <pubDate>Sat, 14 Nov 2026 21:03:58 GMT</pubDate>
       <guid isPermaLink="false">beauty-a272ad11</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_a272ad11.jpg" length="278950" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_a272ad11.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_a272ad11.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_a272ad11.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>The Ultimate Anti-Aging Nighttime Skincare Routine for Glowing Skin</title>
@@ -110,7 +122,8 @@
       <pubDate>Sat, 14 Nov 2026 19:04:09 GMT</pubDate>
       <guid isPermaLink="false">beauty-ade01c0b</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_ade01c0b.jpg" length="232463" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_ade01c0b.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_ade01c0b.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_ade01c0b.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>

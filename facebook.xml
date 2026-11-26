@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - All Latest Inspiration</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/facebook.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for All Latest Inspiration</description>
+    <item>
+      <title>Three Glass Mason Jars Layered With High-Protein Cinnamon Apple | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=diet-887eed52</link>
+      <description>Save this healthy diet &amp; weight loss meals inspiration featuring three glass mason jars layered with high-protein cinnamon apple overnight oats, chia pudding, and fresh berries. Tap the link for full styling details and more holiday ideas! #HealthyHolidayRecipes #HighProteinMeals #HealthyMealPrep #WeightLossRecipes #LowCalorieMeals #CleanEating #GuiltFreeTreats</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:41 GMT</pubDate>
+      <guid isPermaLink="false">diet-887eed52</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/diet_887eed52.jpg" length="588039" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_887eed52.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_887eed52.jpg" width="1000" height="1500"/>
+    </item>
+    <item>
+      <title>Hydrating Winter Glass Skin Morning Skincare Lineup With Frosted | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=beauty-dfa113ca</link>
+      <description>Save this health and beauty routines inspiration featuring hydrating winter glass skin morning skincare lineup with frosted glass hyaluronic serum dropper bottles, rich cream jar, and rose quartz roller on marble tray. Tap the link for full styling details and more holiday ideas! #WinterSkincareRoutine #HolidayBeautyGifts #SkincareRoutine #GlowingSkinTips #SelfCareAesthetic #CleanBeauty #BeautyGiftSet</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:39 GMT</pubDate>
+      <guid isPermaLink="false">beauty-dfa113ca</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/beauty_dfa113ca.jpg" length="165946" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_dfa113ca.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_dfa113ca.jpg" width="1000" height="1500"/>
+    </item>
+    <item>
+      <title>Modern White Ceramic Pet Water Fountain And Smart Automatic Feeder | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=pets-c13d29ee</link>
+      <description>Save this must-have pet products &amp; care inspiration featuring modern white ceramic pet water fountain and smart automatic feeder in a bright clean kitchen beside a cute tabby cat. Tap the link for full styling details and more holiday ideas! #ChristmasGiftsForDogs #PetProducts #DogMomMustHaves #CatFurniture #CozyPetHome #PetHolidayGifts #PetCareTips</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:37 GMT</pubDate>
+      <guid isPermaLink="false">pets-c13d29ee</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/pets_c13d29ee.jpg" length="216712" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_c13d29ee.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_c13d29ee.jpg" width="1000" height="1500"/>
+    </item>
+    <item>
+      <title>Aesthetic Small Apartment Balcony Patio At Dusk With Rattan Egg | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=patio-e71d5c4a</link>
+      <description>Save this cozy patio, garden &amp; backyard ideas inspiration featuring aesthetic small apartment balcony patio at dusk with rattan egg chair, cream throw pillows, mini lit pine tree, and lanterns. Tap the link for full styling details and more holiday ideas! #ChristmasPorchDecor #OutdoorChristmasDecor #WinterPatio #PatioDecor #BackyardIdeas #OutdoorLights #CozyPorch</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:29 GMT</pubDate>
+      <guid isPermaLink="false">patio-e71d5c4a</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/patio_e71d5c4a.jpg" length="512676" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/patio_e71d5c4a.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/patio_e71d5c4a.jpg" width="1000" height="1500"/>
+    </item>
+    <item>
+      <title>Classic Christmas Decor And Cozy Christmas Decor In A Sunlit Living | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=homedecor-701ff919</link>
+      <description>Save this home decor inspiration featuring classic christmas decor and cozy christmas decor in a sunlit living room with brass candleholders, pine greenery, and neutral tones. Tap the link for full styling details and more holiday ideas! #VintageChristmasDecorIdeas #ChristmasHomeDecor #ChristmasLivingRoom #ApartmentChristmasDecor #ClassicChristmasDecor #SimpleChristmasDecor #ChristmasRoomDecorIdeas #WhimsicalChristmasDecor #VintageChristmasDecor #LivingRoomChristmasDecor #CozyChristmasDecor #ChristmasHouseDecor</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:22 GMT</pubDate>
+      <guid isPermaLink="false">homedecor-701ff919</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_701ff919.jpg" length="402969" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_701ff919.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_701ff919.jpg" width="1000" height="1500"/>
+    </item>
+    <item>
+      <title>Glossy Espresso Brunette Butterfly Haircut With Bouncy Blowout | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=hairstyles-77d04bba</link>
+      <description>Save this trending hairstyles &amp; hair color inspiration featuring glossy espresso brunette butterfly haircut with bouncy blowout curls and curtain bangs. Tap the link for full styling details and more holiday ideas! #HolidayHairstyles #ChristmasPartyHair #TrendingHairstyles #WinterHairColor #BalayageHair #HairInspo #UpdoHairstyles</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:15 GMT</pubDate>
+      <guid isPermaLink="false">hairstyles-77d04bba</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_77d04bba.jpg" length="701790" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_77d04bba.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_77d04bba.jpg" width="1000" height="1500"/>
+    </item>
+    <item>
+      <title>Sheer Milky White Almond Winter Nails With Delicate Silver | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=nails-1bdca249</link>
+      <description>Save this trending nails inspiration featuring sheer milky white almond winter nails with delicate silver snowflake art and subtle glitter sparkles. Tap the link for full styling details and more holiday ideas! #ChristmasNails #HolidayNailDesigns #WinterNails #TrendingNails #AlmondNails #FestiveManicure #NailArtIdeas</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:07 GMT</pubDate>
+      <guid isPermaLink="false">nails-1bdca249</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/nails_1bdca249.jpg" length="346232" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_1bdca249.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_1bdca249.jpg" width="1000" height="1500"/>
+    </item>
+    <item>
+      <title>Minimalist 18K Gold Cuff Bracelets, Vintage Gold Watch, And | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=jewelry-642d3d3a</link>
+      <description>Save this luxury jewelry &amp; engagement rings inspiration featuring minimalist 18k gold cuff bracelets, vintage gold watch, and stackable diamond rings styled on a woman's wrist. Tap the link for full styling details and more holiday ideas! #EngagementRings #ChristmasEngagement #HolidayJewelryGifts #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryGiftIdeas</description>
+      <pubDate>Thu, 26 Nov 2026 19:35:59 GMT</pubDate>
+      <guid isPermaLink="false">jewelry-642d3d3a</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_642d3d3a.jpg" length="267855" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_642d3d3a.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_642d3d3a.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>Classic Christmas Decor And Cozy Christmas Decor In A Sunlit Livi | Inspiration</title>
       <link>https://catherinewilliamshub.github.io/?pin=homedecor-34763387</link>
@@ -11,7 +92,8 @@
       <pubDate>Thu, 26 Nov 2026 11:38:44 GMT</pubDate>
       <guid isPermaLink="false">homedecor-34763387</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_34763387.jpg" length="275415" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_34763387.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_34763387.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_34763387.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxurious 14k Gold Layered Necklaces &amp; Holiday Rings</title>
@@ -20,7 +102,8 @@
       <pubDate>Thu, 26 Nov 2026 01:15:33 GMT</pubDate>
       <guid isPermaLink="false">jewelry-c79dd312</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_c79dd312.jpg" length="219369" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_c79dd312.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_c79dd312.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_c79dd312.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>The Ultimate Winter Pet Care Must-Haves For A Cozy Home</title>
@@ -29,7 +112,8 @@
       <pubDate>Wed, 25 Nov 2026 16:20:53 GMT</pubDate>
       <guid isPermaLink="false">pets-f90b35b3</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_f90b35b3.jpg" length="260339" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_f90b35b3.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_f90b35b3.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_f90b35b3.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Glossy Cranberry &amp; Gold Chrome Swirl Almond Christmas Nails</title>
@@ -38,7 +122,8 @@
       <pubDate>Wed, 25 Nov 2026 03:51:34 GMT</pubDate>
       <guid isPermaLink="false">nails-119fdbd6</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/nails_119fdbd6.jpg" length="323733" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/nails_119fdbd6.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/nails_119fdbd6.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/nails_119fdbd6.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>DIY Natural Hair Repair Routine for Silky Winter Strands</title>
@@ -47,7 +132,8 @@
       <pubDate>Tue, 24 Nov 2026 19:46:50 GMT</pubDate>
       <guid isPermaLink="false">beauty-49fe9ff2</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_49fe9ff2.jpg" length="330775" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_49fe9ff2.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_49fe9ff2.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_49fe9ff2.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Effortless French Twist Claw Clip Updo for Bronde Hair</title>
@@ -56,7 +142,8 @@
       <pubDate>Tue, 24 Nov 2026 07:21:44 GMT</pubDate>
       <guid isPermaLink="false">hairstyles-1df34196</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_1df34196.jpg" length="292001" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_1df34196.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_1df34196.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_1df34196.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Pan-Seared Honey Garlic Salmon Fillet With Roasted Asparagus Spea | Inspiration</title>
@@ -65,7 +152,8 @@
       <pubDate>Mon, 23 Nov 2026 22:59:46 GMT</pubDate>
       <guid isPermaLink="false">diet-376079f9</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/diet_376079f9.jpg" length="348126" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_376079f9.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_376079f9.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_376079f9.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Chic Apartment Christmas Decor Ideas for Small Living Spaces</title>
@@ -74,7 +162,8 @@
       <pubDate>Mon, 23 Nov 2026 11:26:49 GMT</pubDate>
       <guid isPermaLink="false">homedecor-9c10c3c3</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_9c10c3c3.jpg" length="518117" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_9c10c3c3.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_9c10c3c3.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_9c10c3c3.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Stunning Emerald Cut Diamond Engagement Ring Stacked with Eternity Band</title>
@@ -83,7 +172,8 @@
       <pubDate>Mon, 23 Nov 2026 01:13:05 GMT</pubDate>
       <guid isPermaLink="false">jewelry-2a1fbfc1</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_2a1fbfc1.jpg" length="211706" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_2a1fbfc1.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_2a1fbfc1.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_2a1fbfc1.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Hydrating Winter Glass Skin Morning Skincare Lineup With Frosted  | Inspiration</title>
@@ -92,7 +182,8 @@
       <pubDate>Sun, 22 Nov 2026 18:46:43 GMT</pubDate>
       <guid isPermaLink="false">beauty-6a6a52b2</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/beauty_6a6a52b2.jpg" length="185099" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_6a6a52b2.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/beauty_6a6a52b2.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/beauty_6a6a52b2.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Sunlit Classic &amp; Cozy Christmas Living Room Decor Ideas</title>
@@ -101,7 +192,8 @@
       <pubDate>Sun, 22 Nov 2026 10:27:12 GMT</pubDate>
       <guid isPermaLink="false">homedecor-4aead814</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_4aead814.jpg" length="357709" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_4aead814.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_4aead814.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/homedecor_4aead814.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxurious 14k Gold Layered Necklaces &amp; Holiday Rings</title>
@@ -110,79 +202,8 @@
       <pubDate>Sun, 22 Nov 2026 00:45:53 GMT</pubDate>
       <guid isPermaLink="false">jewelry-99848b16</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_99848b16.jpg" length="161314" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_99848b16.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>Ultimate Holiday Self-Care Routine: Glowing Winter Skin Guide</title>
-      <link>https://catherinewilliamshub.github.io/?pin=beauty-4c736f4b</link>
-      <description>Transform your bathroom into a luxury spa this holiday season with the ultimate winter self-care routine. Step 1: Exfoliate with a whipped body scrub. Step 2: Dry brush for circulation. Step 3: Lock in moisture with nourishing body oil. Save this guide for radiant, velvety-soft skin all winter long! #WinterSkincareRoutine #HolidayBeautyGifts #SkincareRoutine #GlowingSkinTips #SelfCareAesthetic #CleanBeauty #BeautyGiftSet</description>
-      <pubDate>Sat, 21 Nov 2026 18:23:30 GMT</pubDate>
-      <guid isPermaLink="false">beauty-4c736f4b</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/beauty_4c736f4b.jpg" length="241152" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_4c736f4b.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>Cozy Neutral Living Room with Vintage Christmas Decor Ideas</title>
-      <link>https://catherinewilliamshub.github.io/?pin=homedecor-8088a15a</link>
-      <description>Transform your space with these vintage christmas decor ideas! Style a christmas living room featuring a plush cream cloud sofa, warm oak wood coffee table, and an arched brass mirror. Even for apartment christmas decor, these 3 tips bring timeless festive charm. #VintageChristmasDecorIdeas #ChristmasHomeDecor #ChristmasLivingRoom #ApartmentChristmasDecor #ClassicChristmasDecor #SimpleChristmasDecor #ChristmasRoomDecorIdeas #WhimsicalChristmasDecor #VintageChristmasDecor #LivingRoomChristmasDecor #CozyChristmasDecor #ChristmasHouseDecor</description>
-      <pubDate>Sat, 21 Nov 2026 10:23:52 GMT</pubDate>
-      <guid isPermaLink="false">homedecor-8088a15a</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_8088a15a.jpg" length="326166" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_8088a15a.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>The Ultimate Luxury Holiday Jewelry Gift &amp; Dream Ring Inspiration</title>
-      <link>https://catherinewilliamshub.github.io/?pin=jewelry-9c58b16b</link>
-      <description>Elevate your holidays with stunning 14k/18k gold &amp; platinum pieces. Featuring brilliant Oval, Emerald, and Pear gemstone cuts, this marble tray shines with a diamond tennis bracelet, chunky gold rings, and pearl earrings. The ultimate Christmas jewelry gift or proposal idea! #EngagementRings #ChristmasEngagement #HolidayJewelryGifts #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryGiftIdeas</description>
-      <pubDate>Sat, 21 Nov 2026 01:52:14 GMT</pubDate>
-      <guid isPermaLink="false">jewelry-9c58b16b</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_9c58b16b.jpg" length="223687" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_9c58b16b.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>DIY Natural Hair Repair Routine for Silky Holiday Hair</title>
-      <link>https://catherinewilliamshub.github.io/?pin=beauty-705c9ca1</link>
-      <description>Revive dry winter strands with this aesthetic natural hair repair routine! Follow these 3 easy steps for glossy, healthy hair: Step 1 apply rosemary oil, Step 2 detangle with a bamboo brush, Step 3 secure with silk scrunchies. #WinterSkincareRoutine #HolidayBeautyGifts #SkincareRoutine #GlowingSkinTips #SelfCareAesthetic #CleanBeauty #BeautyGiftSet</description>
-      <pubDate>Fri, 20 Nov 2026 19:21:35 GMT</pubDate>
-      <guid isPermaLink="false">beauty-705c9ca1</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/beauty_705c9ca1.jpg" length="361457" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_705c9ca1.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>Cozy Christmas Living Room Ideas: Warm Lights &amp; Neutral Garlands</title>
-      <link>https://catherinewilliamshub.github.io/?pin=homedecor-974abe11</link>
-      <description>Transform your space with magical christmas home decor! Layer warm glowing tree lights, lush garlands, and natural wood accents for the ultimate festive retreat. Perfect for apartment christmas decor or any classic christmas living room. #VintageChristmasDecorIdeas #ChristmasHomeDecor #ChristmasLivingRoom #ApartmentChristmasDecor #ClassicChristmasDecor #SimpleChristmasDecor #ChristmasRoomDecorIdeas #WhimsicalChristmasDecor #VintageChristmasDecor #LivingRoomChristmasDecor #CozyChristmasDecor #ChristmasHouseDecor</description>
-      <pubDate>Fri, 20 Nov 2026 10:40:58 GMT</pubDate>
-      <guid isPermaLink="false">homedecor-974abe11</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/homedecor_974abe11.jpg" length="598150" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/homedecor_974abe11.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>Stunning Emerald Cut Diamond Ring Stack for the Holidays</title>
-      <link>https://catherinewilliamshub.github.io/?pin=jewelry-ed09dd53</link>
-      <description>Dazzle this season with an emerald cut diamond engagement ring stacked with a diamond eternity band on a graceful hand. Available in gleaming 14k/18k gold or platinum. Also explore oval and pear cuts! The ultimate holiday engagement ring or magical Christmas jewelry gift. #EngagementRings #ChristmasEngagement #HolidayJewelryGifts #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryGiftIdeas</description>
-      <pubDate>Fri, 20 Nov 2026 01:56:09 GMT</pubDate>
-      <guid isPermaLink="false">jewelry-ed09dd53</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_ed09dd53.jpg" length="246609" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_ed09dd53.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>Natural Hair Repair Routine: DIY Rosemary Oil Scalp Treatment</title>
-      <link>https://catherinewilliamshub.github.io/?pin=beauty-7d4909ac</link>
-      <description>Transform your winter hair care routine with this natural hair repair flat-lay guide! Step 1: Massage organic rosemary oil with a glass dropper. Step 2: Detangle gently using a bamboo paddle brush. Step 3: Secure with a silk scrunchie to prevent breakage. #WinterSkincareRoutine #HolidayBeautyGifts #SkincareRoutine #GlowingSkinTips #SelfCareAesthetic #CleanBeauty #BeautyGiftSet</description>
-      <pubDate>Thu, 19 Nov 2026 19:41:28 GMT</pubDate>
-      <guid isPermaLink="false">beauty-7d4909ac</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/beauty_7d4909ac.jpg" length="165946" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/beauty_7d4909ac.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>High-Protein Holiday Meal Prep: Chicken, Avocado &amp; Sweet Potato</title>
-      <link>https://catherinewilliamshub.github.io/?pin=diet-c33fe995</link>
-      <description>Stay on track this holiday season with this high-protein meal prep! Packed with grilled herb chicken, creamy avocado, roasted sweet potatoes, and broccoli. ~420 Cals &amp; 38g Protein per box. Quick, clean, and delicious! #HealthyHolidayRecipes #HighProteinMeals #HealthyMealPrep #WeightLossRecipes #LowCalorieMeals #CleanEating #GuiltFreeTreats</description>
-      <pubDate>Thu, 19 Nov 2026 19:31:26 GMT</pubDate>
-      <guid isPermaLink="false">diet-c33fe995</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/diet_c33fe995.jpg" length="588039" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_c33fe995.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_99848b16.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_99848b16.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>

@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - Trending Hairstyles &amp; Hair Color</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/hairstyles.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for Trending Hairstyles &amp; Hair Color</description>
+    <item>
+      <title>Glossy Espresso Brunette Butterfly Haircut With Bouncy Blowout | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=hairstyles-77d04bba</link>
+      <description>Save this trending hairstyles &amp; hair color inspiration featuring glossy espresso brunette butterfly haircut with bouncy blowout curls and curtain bangs. Tap the link for full styling details and more holiday ideas! #HolidayHairstyles #ChristmasPartyHair #TrendingHairstyles #WinterHairColor #BalayageHair #HairInspo #UpdoHairstyles</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:15 GMT</pubDate>
+      <guid isPermaLink="false">hairstyles-77d04bba</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_77d04bba.jpg" length="701790" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_77d04bba.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_77d04bba.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>Effortless French Twist Claw Clip Updo for Bronde Hair</title>
       <link>https://catherinewilliamshub.github.io/?pin=hairstyles-1df34196</link>
@@ -11,7 +22,8 @@
       <pubDate>Tue, 24 Nov 2026 07:21:44 GMT</pubDate>
       <guid isPermaLink="false">hairstyles-1df34196</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_1df34196.jpg" length="292001" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_1df34196.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_1df34196.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_1df34196.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Vanilla Cream Blonde Lob with Hollywood Waves &amp; Shadow Root</title>
@@ -20,7 +32,8 @@
       <pubDate>Thu, 19 Nov 2026 19:30:20 GMT</pubDate>
       <guid isPermaLink="false">hairstyles-00204013</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_00204013.jpg" length="430500" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_00204013.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_00204013.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_00204013.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Romantic Boho Half-Up Fishtail Braid on Honey Blonde Waves</title>
@@ -29,7 +42,8 @@
       <pubDate>Mon, 16 Nov 2026 04:12:24 GMT</pubDate>
       <guid isPermaLink="false">hairstyles-ab95f04c</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_ab95f04c.jpg" length="523710" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_ab95f04c.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_ab95f04c.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_ab95f04c.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Caramel Blonde Balayage Beach Waves: Face-Framing Hair Inspo</title>
@@ -38,7 +52,8 @@
       <pubDate>Sun, 15 Nov 2026 06:31:37 GMT</pubDate>
       <guid isPermaLink="false">hairstyles-c80f2419</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_c80f2419.jpg" length="309264" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_c80f2419.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_c80f2419.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_c80f2419.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Rich Dimensional Copper Auburn Long Wavy Hair with Golden Shine</title>
@@ -47,7 +62,8 @@
       <pubDate>Sun, 15 Nov 2026 04:13:46 GMT</pubDate>
       <guid isPermaLink="false">hairstyles-a8f1381c</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_a8f1381c.jpg" length="434733" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_a8f1381c.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_a8f1381c.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_a8f1381c.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Rich Dimensional Copper Auburn Long Wavy Hair with Golden Shine</title>
@@ -56,7 +72,8 @@
       <pubDate>Sat, 14 Nov 2026 21:02:14 GMT</pubDate>
       <guid isPermaLink="false">hairstyles-485a38d5</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_485a38d5.jpg" length="476654" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_485a38d5.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_485a38d5.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_485a38d5.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Effortless French Twist Claw Clip Updo on Bronde Hair</title>
@@ -65,7 +82,8 @@
       <pubDate>Sat, 14 Nov 2026 20:50:31 GMT</pubDate>
       <guid isPermaLink="false">hairstyles-b1624215</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/hairstyles_b1624215.jpg" length="483478" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_b1624215.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/hairstyles_b1624215.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/hairstyles_b1624215.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>

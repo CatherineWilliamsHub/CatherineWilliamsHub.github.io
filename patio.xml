@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - Cozy Patio, Garden &amp; Backyard Ideas</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/patio.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for Cozy Patio, Garden &amp; Backyard Ideas</description>
+    <item>
+      <title>Aesthetic Small Apartment Balcony Patio At Dusk With Rattan Egg | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=patio-e71d5c4a</link>
+      <description>Save this cozy patio, garden &amp; backyard ideas inspiration featuring aesthetic small apartment balcony patio at dusk with rattan egg chair, cream throw pillows, mini lit pine tree, and lanterns. Tap the link for full styling details and more holiday ideas! #ChristmasPorchDecor #OutdoorChristmasDecor #WinterPatio #PatioDecor #BackyardIdeas #OutdoorLights #CozyPorch</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:29 GMT</pubDate>
+      <guid isPermaLink="false">patio-e71d5c4a</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/patio_e71d5c4a.jpg" length="512676" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/patio_e71d5c4a.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/patio_e71d5c4a.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>Stunning Modern Backyard Oasis Ideas for Cozy Winter Evenings</title>
       <link>https://catherinewilliamshub.github.io/?pin=patio-915534a7</link>
@@ -11,7 +22,8 @@
       <pubDate>Thu, 19 Nov 2026 19:31:07 GMT</pubDate>
       <guid isPermaLink="false">patio-915534a7</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/patio_915534a7.jpg" length="526355" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/patio_915534a7.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/patio_915534a7.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/patio_915534a7.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Small Apartment Balcony Decor Ideas at Dusk</title>
@@ -20,7 +32,8 @@
       <pubDate>Mon, 16 Nov 2026 04:12:47 GMT</pubDate>
       <guid isPermaLink="false">patio-6afa4fe1</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/patio_6afa4fe1.jpg" length="593844" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/patio_6afa4fe1.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/patio_6afa4fe1.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/patio_6afa4fe1.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy American Front Porch Makeover &amp; Styling Ideas</title>
@@ -29,7 +42,8 @@
       <pubDate>Sun, 15 Nov 2026 06:32:14 GMT</pubDate>
       <guid isPermaLink="false">patio-54861738</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/patio_54861738.jpg" length="272876" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/patio_54861738.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/patio_54861738.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/patio_54861738.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Stunning American Front Porch Makeover: Cozy Ideas &amp; Decor</title>
@@ -38,7 +52,8 @@
       <pubDate>Sun, 15 Nov 2026 04:14:22 GMT</pubDate>
       <guid isPermaLink="false">patio-2cedfdae</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/patio_2cedfdae.jpg" length="408913" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/patio_2cedfdae.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/patio_2cedfdae.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/patio_2cedfdae.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Modern Backyard Oasis: Wooden Deck &amp; Cozy Fire Bowl Patio</title>
@@ -47,7 +62,8 @@
       <pubDate>Sat, 14 Nov 2026 21:02:45 GMT</pubDate>
       <guid isPermaLink="false">patio-8c8d4cac</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/patio_8c8d4cac.jpg" length="454276" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/patio_8c8d4cac.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/patio_8c8d4cac.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/patio_8c8d4cac.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Modern Backyard Oasis: Wooden Deck &amp; Cozy Fire Bowl Patio</title>
@@ -56,7 +72,8 @@
       <pubDate>Sat, 14 Nov 2026 20:51:04 GMT</pubDate>
       <guid isPermaLink="false">patio-731fac09</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/patio_731fac09.jpg" length="239613" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/patio_731fac09.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/patio_731fac09.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/patio_731fac09.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>

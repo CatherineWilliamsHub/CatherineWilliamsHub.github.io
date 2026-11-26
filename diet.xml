@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - Healthy Diet &amp; Weight Loss Meals</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/diet.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for Healthy Diet &amp; Weight Loss Meals</description>
+    <item>
+      <title>Three Glass Mason Jars Layered With High-Protein Cinnamon Apple | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=diet-887eed52</link>
+      <description>Save this healthy diet &amp; weight loss meals inspiration featuring three glass mason jars layered with high-protein cinnamon apple overnight oats, chia pudding, and fresh berries. Tap the link for full styling details and more holiday ideas! #HealthyHolidayRecipes #HighProteinMeals #HealthyMealPrep #WeightLossRecipes #LowCalorieMeals #CleanEating #GuiltFreeTreats</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:41 GMT</pubDate>
+      <guid isPermaLink="false">diet-887eed52</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/diet_887eed52.jpg" length="588039" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_887eed52.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_887eed52.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>Pan-Seared Honey Garlic Salmon Fillet With Roasted Asparagus Spea | Inspiration</title>
       <link>https://catherinewilliamshub.github.io/?pin=diet-376079f9</link>
@@ -11,7 +22,8 @@
       <pubDate>Mon, 23 Nov 2026 22:59:46 GMT</pubDate>
       <guid isPermaLink="false">diet-376079f9</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/diet_376079f9.jpg" length="348126" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_376079f9.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_376079f9.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_376079f9.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>High-Protein Holiday Meal Prep: Chicken, Avocado &amp; Sweet Potato</title>
@@ -20,7 +32,8 @@
       <pubDate>Thu, 19 Nov 2026 19:31:26 GMT</pubDate>
       <guid isPermaLink="false">diet-c33fe995</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/diet_c33fe995.jpg" length="588039" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_c33fe995.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_c33fe995.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_c33fe995.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>High-Protein Vanilla Berry Overnight Oats &amp; Chia Jars</title>
@@ -29,7 +42,8 @@
       <pubDate>Mon, 16 Nov 2026 04:13:56 GMT</pubDate>
       <guid isPermaLink="false">diet-13244a6a</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/diet_13244a6a.jpg" length="314764" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_13244a6a.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_13244a6a.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_13244a6a.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Honey Garlic Salmon &amp; Asparagus: Healthy Weight Loss Dinner</title>
@@ -38,16 +52,8 @@
       <pubDate>Sun, 15 Nov 2026 06:33:56 GMT</pubDate>
       <guid isPermaLink="false">diet-80028f91</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/diet_80028f91.jpg" length="588039" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_80028f91.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>3-Layer High-Protein Overnight Oats &amp; Chia Jars for Weight Loss</title>
-      <link>https://catherinewilliamshub.github.io/?pin=diet-9ae24d49</link>
-      <description>Meal prep your weight loss journey with these gorgeous 3-layer high-protein vanilla overnight oats and chia pudding jars, topped with fresh berries! Only 340 Calories &amp; 28g Protein per serving. Simple ingredients &amp; quick 10-min prep. #HighProteinMeals #HealthyMealPrep #WeightLossRecipes #LowCalorieMeals #CleanEating</description>
-      <pubDate>Sun, 15 Nov 2026 04:16:13 GMT</pubDate>
-      <guid isPermaLink="false">diet-9ae24d49</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/diet_9ae24d49.jpg" length="588039" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_9ae24d49.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_80028f91.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_80028f91.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Honey Garlic Salmon &amp; Asparagus: Healthy 300-Calorie Dinner</title>
@@ -56,7 +62,8 @@
       <pubDate>Sat, 14 Nov 2026 21:04:36 GMT</pubDate>
       <guid isPermaLink="false">diet-c814ee26</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/diet_c814ee26.jpg" length="458280" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_c814ee26.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_c814ee26.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_c814ee26.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Creamy Green Weight Loss Smoothie (Only 240 Calories!)</title>
@@ -65,7 +72,8 @@
       <pubDate>Sat, 14 Nov 2026 19:04:24 GMT</pubDate>
       <guid isPermaLink="false">diet-2725a993</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/diet_2725a993.jpg" length="304857" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/diet_2725a993.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/diet_2725a993.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/diet_2725a993.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>

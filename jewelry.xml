@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - Luxury Jewelry &amp; Engagement Rings</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/jewelry.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for Luxury Jewelry &amp; Engagement Rings</description>
+    <item>
+      <title>Minimalist 18K Gold Cuff Bracelets, Vintage Gold Watch, And | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=jewelry-642d3d3a</link>
+      <description>Save this luxury jewelry &amp; engagement rings inspiration featuring minimalist 18k gold cuff bracelets, vintage gold watch, and stackable diamond rings styled on a woman's wrist. Tap the link for full styling details and more holiday ideas! #EngagementRings #ChristmasEngagement #HolidayJewelryGifts #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryGiftIdeas</description>
+      <pubDate>Thu, 26 Nov 2026 19:35:59 GMT</pubDate>
+      <guid isPermaLink="false">jewelry-642d3d3a</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_642d3d3a.jpg" length="267855" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_642d3d3a.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_642d3d3a.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>Luxurious 14k Gold Layered Necklaces &amp; Holiday Rings</title>
       <link>https://catherinewilliamshub.github.io/?pin=jewelry-c79dd312</link>
@@ -11,7 +22,8 @@
       <pubDate>Thu, 26 Nov 2026 01:15:33 GMT</pubDate>
       <guid isPermaLink="false">jewelry-c79dd312</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_c79dd312.jpg" length="219369" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_c79dd312.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_c79dd312.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_c79dd312.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Stunning Emerald Cut Diamond Engagement Ring Stacked with Eternity Band</title>
@@ -20,7 +32,8 @@
       <pubDate>Mon, 23 Nov 2026 01:13:05 GMT</pubDate>
       <guid isPermaLink="false">jewelry-2a1fbfc1</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_2a1fbfc1.jpg" length="211706" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_2a1fbfc1.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_2a1fbfc1.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_2a1fbfc1.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxurious 14k Gold Layered Necklaces &amp; Holiday Rings</title>
@@ -29,7 +42,8 @@
       <pubDate>Sun, 22 Nov 2026 00:45:53 GMT</pubDate>
       <guid isPermaLink="false">jewelry-99848b16</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_99848b16.jpg" length="161314" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_99848b16.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_99848b16.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_99848b16.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>The Ultimate Luxury Holiday Jewelry Gift &amp; Dream Ring Inspiration</title>
@@ -38,7 +52,8 @@
       <pubDate>Sat, 21 Nov 2026 01:52:14 GMT</pubDate>
       <guid isPermaLink="false">jewelry-9c58b16b</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_9c58b16b.jpg" length="223687" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_9c58b16b.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_9c58b16b.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_9c58b16b.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Stunning Emerald Cut Diamond Ring Stack for the Holidays</title>
@@ -47,7 +62,8 @@
       <pubDate>Fri, 20 Nov 2026 01:56:09 GMT</pubDate>
       <guid isPermaLink="false">jewelry-ed09dd53</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_ed09dd53.jpg" length="246609" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_ed09dd53.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_ed09dd53.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_ed09dd53.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Breathtaking Oval Solitaire Diamond Ring in Gold | Holiday Proposal Idea</title>
@@ -56,7 +72,8 @@
       <pubDate>Thu, 19 Nov 2026 19:29:54 GMT</pubDate>
       <guid isPermaLink="false">jewelry-1edc5d16</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_1edc5d16.jpg" length="190954" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_1edc5d16.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_1edc5d16.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_1edc5d16.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxurious Marble Jewelry Tray &amp; Fine Gold Ring Styling Ideas</title>
@@ -65,7 +82,8 @@
       <pubDate>Thu, 19 Nov 2026 02:06:28 GMT</pubDate>
       <guid isPermaLink="false">jewelry-49e06adc</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_49e06adc.jpg" length="207685" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_49e06adc.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_49e06adc.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_49e06adc.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Brilliant Oval Cut Solitaire Diamond Engagement Ring With Hidden  | Inspiration</title>
@@ -74,7 +92,8 @@
       <pubDate>Wed, 18 Nov 2026 00:07:52 GMT</pubDate>
       <guid isPermaLink="false">jewelry-2981d082</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_2981d082.jpg" length="204088" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_2981d082.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_2981d082.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_2981d082.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Brilliant Oval Cut Solitaire Diamond Engagement Ring With Hidden  | Inspiration</title>
@@ -83,16 +102,8 @@
       <pubDate>Mon, 16 Nov 2026 04:12:02 GMT</pubDate>
       <guid isPermaLink="false">jewelry-18d2e894</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_18d2e894.jpg" length="217190" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_18d2e894.jpg" type="image/jpeg" medium="image"/>
-    </item>
-    <item>
-      <title>Stunning Luxury Jewelry Styling: Diamond Tennis Bracelets &amp; Gold Rings</title>
-      <link>https://catherinewilliamshub.github.io/?pin=jewelry-b7d2c5af</link>
-      <description>Elevate your vanity with this chic marble jewelry tray showcasing a sparkling diamond tennis bracelet, 14k/18k gold chunky rings, and timeless pearl drop earrings. Pair these with an Oval, Emerald, or Pear gemstone cut for ultimate sophistication. Pro styling tip: Mix metals and layer textures to create a high-end, effortless focal point. #EngagementRings #LuxuryJewelry #GoldJewelry #DiamondRing #JewelryInspo</description>
-      <pubDate>Sun, 15 Nov 2026 06:31:04 GMT</pubDate>
-      <guid isPermaLink="false">jewelry-b7d2c5af</guid>
-      <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_b7d2c5af.jpg" length="198088" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_b7d2c5af.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_18d2e894.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_18d2e894.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Timeless Wrist Stack: 18k Gold Cuffs &amp; Diamond Rings</title>
@@ -101,7 +112,8 @@
       <pubDate>Sun, 15 Nov 2026 04:13:09 GMT</pubDate>
       <guid isPermaLink="false">jewelry-be607d59</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_be607d59.jpg" length="270583" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_be607d59.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_be607d59.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_be607d59.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Breathtaking Oval Solitaire Diamond Ring with Hidden Halo in Yellow Gold</title>
@@ -110,7 +122,8 @@
       <pubDate>Sat, 14 Nov 2026 21:01:43 GMT</pubDate>
       <guid isPermaLink="false">jewelry-bf0efd88</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/jewelry_bf0efd88.jpg" length="215819" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_bf0efd88.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/jewelry_bf0efd88.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/jewelry_bf0efd88.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>

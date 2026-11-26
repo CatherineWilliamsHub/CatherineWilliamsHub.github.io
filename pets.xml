@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catherine Williams Hub - Must-Have Pet Products &amp; Care</title>
     <link>https://catherinewilliamshub.github.io</link>
+    <atom:link href="https://catherinewilliamshub.github.io/pets.xml" rel="self" type="application/rss+xml"/>
     <description>Daily US inspiration for Must-Have Pet Products &amp; Care</description>
+    <item>
+      <title>Modern White Ceramic Pet Water Fountain And Smart Automatic Feeder | Ideas</title>
+      <link>https://catherinewilliamshub.github.io/?pin=pets-c13d29ee</link>
+      <description>Save this must-have pet products &amp; care inspiration featuring modern white ceramic pet water fountain and smart automatic feeder in a bright clean kitchen beside a cute tabby cat. Tap the link for full styling details and more holiday ideas! #ChristmasGiftsForDogs #PetProducts #DogMomMustHaves #CatFurniture #CozyPetHome #PetHolidayGifts #PetCareTips</description>
+      <pubDate>Thu, 26 Nov 2026 19:36:37 GMT</pubDate>
+      <guid isPermaLink="false">pets-c13d29ee</guid>
+      <enclosure url="https://catherinewilliamshub.github.io/images/pets_c13d29ee.jpg" length="216712" type="image/jpeg"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_c13d29ee.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_c13d29ee.jpg" width="1000" height="1500"/>
+    </item>
     <item>
       <title>The Ultimate Winter Pet Care Must-Haves For A Cozy Home</title>
       <link>https://catherinewilliamshub.github.io/?pin=pets-f90b35b3</link>
@@ -11,7 +22,8 @@
       <pubDate>Wed, 25 Nov 2026 16:20:53 GMT</pubDate>
       <guid isPermaLink="false">pets-f90b35b3</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_f90b35b3.jpg" length="260339" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_f90b35b3.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_f90b35b3.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_f90b35b3.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxurious Sage Corduroy Dog Harness | Cozy Winter Pet Gift</title>
@@ -20,7 +32,8 @@
       <pubDate>Thu, 19 Nov 2026 19:31:17 GMT</pubDate>
       <guid isPermaLink="false">pets-40a18c8f</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_40a18c8f.jpg" length="191690" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_40a18c8f.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_40a18c8f.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_40a18c8f.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxurious Sage Corduroy Dog Harness for Miniature Dachshunds</title>
@@ -29,7 +42,8 @@
       <pubDate>Tue, 17 Nov 2026 15:02:32 GMT</pubDate>
       <guid isPermaLink="false">pets-6cdc64b7</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_6cdc64b7.jpg" length="285039" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_6cdc64b7.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_6cdc64b7.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_6cdc64b7.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Upgrade Your Pet's Routine: Modern White Ceramic Fountain &amp; Smart Feeder</title>
@@ -38,7 +52,8 @@
       <pubDate>Mon, 16 Nov 2026 04:13:11 GMT</pubDate>
       <guid isPermaLink="false">pets-51a1ba29</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_51a1ba29.jpg" length="228238" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_51a1ba29.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_51a1ba29.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_51a1ba29.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Luxurious Sage Green Corduroy Dog Harness for Miniature Dachshunds</title>
@@ -47,7 +62,8 @@
       <pubDate>Sun, 15 Nov 2026 06:32:47 GMT</pubDate>
       <guid isPermaLink="false">pets-2eead594</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_2eead594.jpg" length="295756" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_2eead594.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_2eead594.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_2eead594.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Cozy Golden Retriever Puppy in Boucle Donut Dog Bed on Oak Floor</title>
@@ -56,7 +72,8 @@
       <pubDate>Sun, 15 Nov 2026 04:14:59 GMT</pubDate>
       <guid isPermaLink="false">pets-9dcead2e</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_9dcead2e.jpg" length="254074" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_9dcead2e.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_9dcead2e.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_9dcead2e.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Chic Elevated Bamboo Dog Feeder with Matte Bowls</title>
@@ -65,7 +82,8 @@
       <pubDate>Sat, 14 Nov 2026 21:03:22 GMT</pubDate>
       <guid isPermaLink="false">pets-dfac356a</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_dfac356a.jpg" length="274414" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_dfac356a.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_dfac356a.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_dfac356a.jpg" width="1000" height="1500"/>
     </item>
     <item>
       <title>Upgrade to the Ultimate Modern Pet Feeding Station</title>
@@ -74,7 +92,8 @@
       <pubDate>Sat, 14 Nov 2026 19:03:49 GMT</pubDate>
       <guid isPermaLink="false">pets-1459e40e</guid>
       <enclosure url="https://catherinewilliamshub.github.io/images/pets_1459e40e.jpg" length="250123" type="image/jpeg"/>
-      <media:content url="https://catherinewilliamshub.github.io/images/pets_1459e40e.jpg" type="image/jpeg" medium="image"/>
+      <media:content url="https://catherinewilliamshub.github.io/images/pets_1459e40e.jpg" type="image/jpeg" medium="image" width="1000" height="1500"/>
+      <media:thumbnail url="https://catherinewilliamshub.github.io/images/pets_1459e40e.jpg" width="1000" height="1500"/>
     </item>
   </channel>
 </rss>
