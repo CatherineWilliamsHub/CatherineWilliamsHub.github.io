@@ -21,12 +21,13 @@ jobs:
           python-version: '3.11'
 
       - name: Install libraries
-        run: pip install requests Pillow gradio_client
+        run: pip install requests Pillow
 
       - name: Generate AI Pins and Update RSS
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python auto_pin.py
 
